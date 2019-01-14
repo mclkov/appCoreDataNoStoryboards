@@ -18,6 +18,7 @@ extension ViewController {
     func setupNavigationItem() {
         self.setupNavigationTitle("Test")
         self.setupRightBarButtonItemAndAction()
+        self.setupStyleOfRightBarButton()
     }
     
     // { setupNavigationItem
@@ -27,6 +28,10 @@ extension ViewController {
     
     func setupRightBarButtonItemAndAction() {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(self.addCompanyPressed))
+    }
+    
+    func setupStyleOfRightBarButton() {
+        self.navigationItem.rightBarButtonItem?.tintColor = UIColor.white
     }
     // setupNavigationItem }
     
