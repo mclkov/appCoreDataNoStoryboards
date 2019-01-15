@@ -8,12 +8,14 @@
 
 import UIKit
 
-class ViewController: UITableViewController {
+class HomeVC: UITableViewController {
     let colorScheme = ColorScheme()
+    let constants = Constants()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        setupTableView()
     }
     
     @objc func addCompanyPressed() {

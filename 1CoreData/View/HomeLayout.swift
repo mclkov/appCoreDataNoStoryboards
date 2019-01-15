@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension ViewController {
+extension HomeVC {
     func setupView() {
         self.setupTableViewStyles()
         self.setupNavigationItem()
