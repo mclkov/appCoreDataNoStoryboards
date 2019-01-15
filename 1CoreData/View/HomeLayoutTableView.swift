@@ -19,6 +19,6 @@ extension HomeVC {
     }
     
     func registerCellReuseId() {
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constants().cellReuseId)
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.constants.cellReuseId)
     }
 }

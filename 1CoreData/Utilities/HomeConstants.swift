@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct Constants {
+struct HomeConstants {
     let cellReuseId = "cellId"
 }

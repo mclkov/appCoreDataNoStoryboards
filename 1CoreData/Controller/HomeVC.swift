@@ -10,7 +10,7 @@ import UIKit
 
 class HomeVC: UITableViewController {
     let colorScheme = ColorScheme()
-    let constants = Constants()
+    let constants = HomeConstants()
     
     override func viewDidLoad() {
         super.viewDidLoad()
