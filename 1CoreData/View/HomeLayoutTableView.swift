@@ -19,12 +19,12 @@ extension HomeVC {
     }
     
     func registerCellReuseId() {
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.constants.cellReuseId)
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: HomeConstants.cellReuseId)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.constants.cellReuseId, for: indexPath)
-        cell.backgroundColor = self.colorScheme.cellColor
+        let cell = tableView.dequeueReusableCell(withIdentifier: HomeConstants.cellReuseId, for: indexPath)
+        cell.backgroundColor = ColorScheme.cellColor
         
         return cell
     }

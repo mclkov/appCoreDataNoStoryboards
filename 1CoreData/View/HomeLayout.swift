@@ -16,7 +16,7 @@ extension HomeVC {
     }
     
     func setupTableViewStyles() {
-        tableView.backgroundColor = self.colorScheme.darkBlue
+        tableView.backgroundColor = ColorScheme.darkBlue
         tableView.separatorStyle = .none
     }
     
@@ -49,7 +49,7 @@ extension HomeVC {
     }
     
     func setupTitleStylesOfNavigationBar(_ navigationBarReference: UINavigationBar) {
-        navigationBarReference.barTintColor = self.colorScheme.lightRed
+        navigationBarReference.barTintColor = ColorScheme.lightRed
         navigationBarReference.prefersLargeTitles = true
         navigationBarReference.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationBarReference.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]

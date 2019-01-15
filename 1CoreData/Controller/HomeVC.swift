@@ -8,10 +8,7 @@
 
 import UIKit
 
-class HomeVC: UITableViewController {
-    let colorScheme = ColorScheme()
-    let constants = HomeConstants()
-    
+class HomeVC: UITableViewController {    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()

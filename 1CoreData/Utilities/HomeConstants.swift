@@ -9,5 +9,5 @@
 import Foundation
 
 struct HomeConstants {
-    let cellReuseId = "cellId"
+    static let cellReuseId = "cellId"
 }
