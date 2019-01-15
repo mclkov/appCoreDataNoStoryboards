@@ -10,8 +10,15 @@ import UIKit
 
 extension HomeVC {
     func setupTableView() {
+        self.setupTableViewStyles()
         self.fillFooterEmptySpace()
         self.registerCellReuseId()
+    }
+    
+    func setupTableViewStyles() {
+        tableView.backgroundColor = ColorScheme.darkBlue
+//        tableView.separatorStyle = .none
+        tableView.separatorColor = .white
     }
     
     func fillFooterEmptySpace() {
@@ -52,7 +59,7 @@ extension HomeVC {
     
     func addExtraCellToBeginning() -> UIView {
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = ColorScheme.lightBlue
         
         return view
     }

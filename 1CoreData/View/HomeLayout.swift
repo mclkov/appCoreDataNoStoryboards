@@ -10,15 +10,8 @@ import UIKit
 
 extension HomeVC {
     func setupView() {
-        self.setupTableViewStyles()
         self.setupNavigationItem()
         self.setupNavigationBar()
-    }
-    
-    func setupTableViewStyles() {
-        tableView.backgroundColor = ColorScheme.darkBlue
-        tableView.separatorStyle = .none
-        tableView.separatorColor = .white
     }
     
     func setupNavigationItem() {
