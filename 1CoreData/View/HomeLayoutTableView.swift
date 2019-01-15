@@ -24,7 +24,7 @@ extension HomeVC {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HomeConstants.cellReuseId, for: indexPath)
-        cell.backgroundColor = ColorScheme.cellColor
+        cell.backgroundColor = ColorScheme.teal
         
         return cell
     }
