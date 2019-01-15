@@ -6,8 +6,9 @@
 //  Copyright © 2019 McL. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct HomeConstants {
     static let cellReuseId = "cellId"
+    static let heightOfCell: CGFloat = 50.0
 }

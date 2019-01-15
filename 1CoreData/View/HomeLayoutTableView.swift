@@ -39,15 +39,15 @@ extension HomeVC {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.calculateRows()
+        return self.calculateRows()
     }
     
     func calculateRows() -> Int {
         return 3
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        self.addExtraCellToBeginning()
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return self.addExtraCellToBeginning()
     }
     
     func addExtraCellToBeginning() -> UIView {
@@ -55,5 +55,9 @@ extension HomeVC {
         view.backgroundColor = .white
         
         return view
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return HomeConstants.heightOfCell
     }
 }
