@@ -10,15 +10,26 @@ import UIKit
 
 extension HomeVC {
     func setupTableView() {
-        self.setupFooterView()
+        self.fillFooterEmptySpace()
         self.registerCellReuseId()
     }
     
-    func setupFooterView() {
+    func fillFooterEmptySpace() {
         self.tableView.tableFooterView = UIView()
     }
     
     func registerCellReuseId() {
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.constants.cellReuseId)
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: self.constants.cellReuseId, for: indexPath)
+        cell.backgroundColor = self.colorScheme.cellColor
+        
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
     }
 }
