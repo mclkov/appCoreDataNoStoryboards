@@ -23,13 +23,37 @@ extension HomeVC {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: HomeConstants.cellReuseId, for: indexPath)
-        cell.backgroundColor = ColorScheme.teal
+        let emptyCell = tableView.dequeueReusableCell(withIdentifier: HomeConstants.cellReuseId, for: indexPath)
+        let cell = configureCell(emptyCell)
         
         return cell
     }
     
+    func configureCell(_ cell: UITableViewCell) -> UITableViewCell {
+        return self.setupStylesOfCell(cell)
+    }
+    
+    func setupStylesOfCell(_ cell: UITableViewCell) -> UITableViewCell {
+        cell.backgroundColor = ColorScheme.teal
+        return cell
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        self.calculateRows()
+    }
+    
+    func calculateRows() -> Int {
         return 3
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        self.addExtraCellToBeginning()
+    }
+    
+    func addExtraCellToBeginning() -> UIView {
+        let view = UIView()
+        view.backgroundColor = .white
+        
+        return view
     }
 }
