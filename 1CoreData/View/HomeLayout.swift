@@ -18,6 +18,7 @@ extension HomeVC {
     func setupTableViewStyles() {
         tableView.backgroundColor = ColorScheme.darkBlue
         tableView.separatorStyle = .none
+        tableView.separatorColor = .white
     }
     
     func setupNavigationItem() {
@@ -36,7 +37,7 @@ extension HomeVC {
     }
     
     func setupColorOfRightBarButton() {
-        self.navigationItem.rightBarButtonItem?.tintColor = UIColor.white
+        self.navigationItem.rightBarButtonItem?.tintColor = .white
     }
     // setupNavigationItem }
     
