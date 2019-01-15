@@ -63,7 +63,6 @@
 				601E70DA21ECD7F1003011F8 /* Model */,
 				601E70D921ECD7EC003011F8 /* View */,
 				601E70D821ECD7E0003011F8 /* Controller */,
-				601E70D421ECD18F003011F8 /* ColorScheme.swift */,
 				601E70C421ECC40D003011F8 /* Main.storyboard */,
 				601E70C721ECC40E003011F8 /* Assets.xcassets */,
 				601E70C921ECC40E003011F8 /* LaunchScreen.storyboard */,
@@ -85,6 +84,7 @@
 		601E70D921ECD7EC003011F8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				601E70D421ECD18F003011F8 /* ColorScheme.swift */,
 				601E70D621ECD7D8003011F8 /* HomeLayout.swift */,
 			);
 			path = View;

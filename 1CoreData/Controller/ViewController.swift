@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UITableViewController {
+    let colorScheme = ColorScheme()
     
     override func viewDidLoad() {
         super.viewDidLoad()

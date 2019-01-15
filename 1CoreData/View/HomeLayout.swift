@@ -10,15 +10,20 @@ import UIKit
 
 extension ViewController {
     func setupView() {
-        view.backgroundColor = .white
+        self.setupTableViewStyles()
         self.setupNavigationItem()
         self.setupNavigationBar()
+    }
+    
+    func setupTableViewStyles() {
+        tableView.backgroundColor = self.colorScheme.darkBlue
+        tableView.separatorStyle = .none
     }
     
     func setupNavigationItem() {
         self.setupNavigationTitle("Test")
         self.setupRightBarButtonItemAndAction()
-        self.setupStyleOfRightBarButton()
+        self.setupColorOfRightBarButton()
     }
     
     // { setupNavigationItem
@@ -30,34 +35,24 @@ extension ViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(self.addCompanyPressed))
     }
     
-    func setupStyleOfRightBarButton() {
+    func setupColorOfRightBarButton() {
         self.navigationItem.rightBarButtonItem?.tintColor = UIColor.white
     }
     // setupNavigationItem }
     
     func setupNavigationBar() {
         let navigationBar = navigationController!.navigationBar
+        navigationBar.backgroundColor = .yellow
+        navigationBar.isTranslucent = false
         
-        self.setupBackgroundOfNavigationBar(navigationBar)
-        self.setupTranslucentOfNavigationBar(navigationBar)
-        self.setupTitleOfNavigationBar(navigationBar)
-        
+        self.setupTitleStylesOfNavigationBar(navigationBar)
     }
     
-    // { setupNavigationBar
-    func setupBackgroundOfNavigationBar(_ navigationBarReference: UINavigationBar) {
-        navigationBarReference.backgroundColor = .yellow
-    }
-    
-    func setupTranslucentOfNavigationBar(_ navigationBarReference: UINavigationBar) {
-        navigationBarReference.isTranslucent = false
-    }
-    
-    func setupTitleOfNavigationBar(_ navigationBarReference: UINavigationBar) {
-        navigationBarReference.barTintColor = ColorScheme().lightRed
+    func setupTitleStylesOfNavigationBar(_ navigationBarReference: UINavigationBar) {
+        navigationBarReference.barTintColor = self.colorScheme.lightRed
         navigationBarReference.prefersLargeTitles = true
         navigationBarReference.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationBarReference.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
-    // setupNavigationBar }
 }
 
