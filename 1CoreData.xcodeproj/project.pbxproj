@@ -16,6 +16,8 @@
 		601E70D721ECD7D8003011F8 /* HomeLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E70D621ECD7D8003011F8 /* HomeLayout.swift */; };
 		601E70DE21EE5D7A003011F8 /* HomeLayoutTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E70DD21EE5D7A003011F8 /* HomeLayoutTableView.swift */; };
 		601E70E121EE60F2003011F8 /* HomeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E70E021EE60F2003011F8 /* HomeConstants.swift */; };
+		601E70E321EFC2E4003011F8 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E70E221EFC2E4003011F8 /* Company.swift */; };
+		601E70E521EFC61F003011F8 /* CompanyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E70E421EFC61F003011F8 /* CompanyCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		601E70D621ECD7D8003011F8 /* HomeLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLayout.swift; sourceTree = "<group>"; };
 		601E70DD21EE5D7A003011F8 /* HomeLayoutTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLayoutTableView.swift; sourceTree = "<group>"; };
 		601E70E021EE60F2003011F8 /* HomeConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeConstants.swift; sourceTree = "<group>"; };
+		601E70E221EFC2E4003011F8 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		601E70E421EFC61F003011F8 /* CompanyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,7 @@
 				601E70D421ECD18F003011F8 /* ColorScheme.swift */,
 				601E70D621ECD7D8003011F8 /* HomeLayout.swift */,
 				601E70DD21EE5D7A003011F8 /* HomeLayoutTableView.swift */,
+				601E70E421EFC61F003011F8 /* CompanyCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -96,6 +101,7 @@
 		601E70DA21ECD7F1003011F8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				601E70E221EFC2E4003011F8 /* Company.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -182,9 +188,11 @@
 				601E70D321ECCE4C003011F8 /* CustomNavigationController.swift in Sources */,
 				601E70C321ECC40D003011F8 /* HomeVC.swift in Sources */,
 				601E70D721ECD7D8003011F8 /* HomeLayout.swift in Sources */,
+				601E70E521EFC61F003011F8 /* CompanyCell.swift in Sources */,
 				601E70E121EE60F2003011F8 /* HomeConstants.swift in Sources */,
 				601E70DE21EE5D7A003011F8 /* HomeLayoutTableView.swift in Sources */,
 				601E70C121ECC40D003011F8 /* AppDelegate.swift in Sources */,
+				601E70E321EFC2E4003011F8 /* Company.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,11 +8,19 @@
 
 import UIKit
 
-class HomeVC: UITableViewController {    
+class HomeVC: UITableViewController {
+    let companies = [
+        Company(name: "Apple", founded: Date()),
+        Company(name: "SpaceX", founded: Date())
+    ]
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupTableView()
+    }
+    
+    func amountOfRowsForTableView() -> Int {
+        return companies.count
     }
     
     @objc func addCompanyPressed() {

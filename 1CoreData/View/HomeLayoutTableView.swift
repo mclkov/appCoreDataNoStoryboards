@@ -46,11 +46,7 @@ extension HomeVC {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.calculateRows()
-    }
-    
-    func calculateRows() -> Int {
-        return 3
+        return self.amountOfRowsForTableView()
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
