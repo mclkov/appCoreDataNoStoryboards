@@ -33,6 +33,11 @@ extension HomeVC {
         let emptyCell = tableView.dequeueReusableCell(withIdentifier: HomeConstants.cellReuseId, for: indexPath)
         let cell = configureCell(emptyCell)
         
+        let company = self.companies[indexPath.row]
+        
+        cell.textLabel?.text = company.name
+        cell.textLabel?.textColor = .white
+        
         return cell
     }
     
