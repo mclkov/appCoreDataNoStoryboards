@@ -10,6 +10,10 @@ import UIKit
 
 extension CreateCompanyVC {
     func setupView() {
+        self.setupBackgroundColor()
+    }
+    
+    func setupBackgroundColor() {
         view.backgroundColor = .yellow
     }
 }

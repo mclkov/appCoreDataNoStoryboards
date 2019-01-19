@@ -97,11 +97,9 @@
 		601E70D921ECD7EC003011F8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				601E70ED21F32F16003011F8 /* Home */,
+				601E70EE21F32F33003011F8 /* CreateCompany */,
 				601E70D421ECD18F003011F8 /* ColorScheme.swift */,
-				601E70D621ECD7D8003011F8 /* HomeLayout.swift */,
-				601E70DD21EE5D7A003011F8 /* HomeLayoutTableView.swift */,
-				601E70E421EFC61F003011F8 /* CompanyCell.swift */,
-				601E70E921F322DA003011F8 /* CreateCompanyLayout.swift */,
 				601E70EB21F3253A003011F8 /* SetNavigationBarTheme.swift */,
 			);
 			path = View;
@@ -121,6 +119,24 @@
 				601E70E021EE60F2003011F8 /* HomeConstants.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		601E70ED21F32F16003011F8 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				601E70D621ECD7D8003011F8 /* HomeLayout.swift */,
+				601E70DD21EE5D7A003011F8 /* HomeLayoutTableView.swift */,
+				601E70E421EFC61F003011F8 /* CompanyCell.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		601E70EE21F32F33003011F8 /* CreateCompany */ = {
+			isa = PBXGroup;
+			children = (
+				601E70E921F322DA003011F8 /* CreateCompanyLayout.swift */,
+			);
+			path = CreateCompany;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
