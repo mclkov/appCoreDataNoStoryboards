@@ -20,6 +20,7 @@
 		601E70E521EFC61F003011F8 /* CompanyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E70E421EFC61F003011F8 /* CompanyCell.swift */; };
 		601E70E821F321BD003011F8 /* CreateCompanyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E70E721F321BD003011F8 /* CreateCompanyVC.swift */; };
 		601E70EA21F322DA003011F8 /* CreateCompanyLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E70E921F322DA003011F8 /* CreateCompanyLayout.swift */; };
+		601E70EC21F3253A003011F8 /* SetNavigationBarTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E70EB21F3253A003011F8 /* SetNavigationBarTheme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		601E70E421EFC61F003011F8 /* CompanyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyCell.swift; sourceTree = "<group>"; };
 		601E70E721F321BD003011F8 /* CreateCompanyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCompanyVC.swift; sourceTree = "<group>"; };
 		601E70E921F322DA003011F8 /* CreateCompanyLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCompanyLayout.swift; sourceTree = "<group>"; };
+		601E70EB21F3253A003011F8 /* SetNavigationBarTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNavigationBarTheme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				601E70DD21EE5D7A003011F8 /* HomeLayoutTableView.swift */,
 				601E70E421EFC61F003011F8 /* CompanyCell.swift */,
 				601E70E921F322DA003011F8 /* CreateCompanyLayout.swift */,
+				601E70EB21F3253A003011F8 /* SetNavigationBarTheme.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 			files = (
 				601E70D521ECD18F003011F8 /* ColorScheme.swift in Sources */,
 				601E70D321ECCE4C003011F8 /* CustomNavigationController.swift in Sources */,
+				601E70EC21F3253A003011F8 /* SetNavigationBarTheme.swift in Sources */,
 				601E70C321ECC40D003011F8 /* HomeVC.swift in Sources */,
 				601E70D721ECD7D8003011F8 /* HomeLayout.swift in Sources */,
 				601E70E521EFC61F003011F8 /* CompanyCell.swift in Sources */,

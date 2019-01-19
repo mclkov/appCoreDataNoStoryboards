@@ -11,7 +11,6 @@ import UIKit
 extension HomeVC {
     func setupView() {
         self.setupNavigationItem()
-        self.setupNavigationBar()
     }
     
     func setupNavigationItem() {
@@ -19,8 +18,7 @@ extension HomeVC {
         self.setupRightBarButtonItemAndAction()
         self.setupColorOfRightBarButton()
     }
-    
-    // { setupNavigationItem
+
     func setupNavigationTitle(_ title: String) {
         self.navigationItem.title = title
     }
@@ -31,22 +29,6 @@ extension HomeVC {
     
     func setupColorOfRightBarButton() {
         self.navigationItem.rightBarButtonItem?.tintColor = .white
-    }
-    // setupNavigationItem }
-    
-    func setupNavigationBar() {
-        let navigationBar = navigationController!.navigationBar
-        navigationBar.backgroundColor = .yellow
-        navigationBar.isTranslucent = false
-        
-        self.setupTitleStylesOfNavigationBar(navigationBar)
-    }
-    
-    func setupTitleStylesOfNavigationBar(_ navigationBarReference: UINavigationBar) {
-        navigationBarReference.barTintColor = ColorScheme.lightRed
-        navigationBarReference.prefersLargeTitles = true
-        navigationBarReference.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        navigationBarReference.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
 }
 

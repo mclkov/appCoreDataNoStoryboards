@@ -25,7 +25,7 @@ class HomeVC: UITableViewController {
     
     @objc func addCompanyPressed() {
         let createCompanyController = CreateCompanyVC()
-        let navigationController = UINavigationController(rootViewController: createCompanyController)
+        let navigationController = CustomNavigationController(rootViewController: createCompanyController)
         
         present(navigationController, animated: true, completion: nil)
     }
