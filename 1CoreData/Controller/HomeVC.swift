@@ -24,7 +24,12 @@ class HomeVC: UITableViewController {
     }
     
     @objc func addCompanyPressed() {
-        print("Test")
+        let createCompanyController = UIViewController()
+        createCompanyController.view.backgroundColor = .green
+        
+        let navigationController = UINavigationController(rootViewController: createCompanyController)
+        
+        present(navigationController, animated: true, completion: nil)
     }
 }
 
