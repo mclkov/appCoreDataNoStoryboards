@@ -12,6 +12,7 @@ class SetNavigationBarTheme {
     init() {
         self.setupBackground()
         self.setupTitleStyles()
+        self.setupButtonColor()
     }
     
     func setupBackground() {
@@ -23,5 +24,9 @@ class SetNavigationBarTheme {
         UINavigationBar.appearance().prefersLargeTitles = true
         UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+    }
+    
+    func setupButtonColor() {
+        UINavigationBar.appearance().tintColor = .white
     }
 }
