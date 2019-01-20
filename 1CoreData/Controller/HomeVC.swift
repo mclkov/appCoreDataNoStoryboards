@@ -33,7 +33,7 @@ class HomeVC: UITableViewController, CreateCompanyControllerDelegate {
     @objc func addCompanyPressed() {
         let createCompanyController = CreateCompanyVC()
         let navigationController = CustomNavigationController(rootViewController: createCompanyController)
-        createCompanyController.delegate = self
+        createCompanyController.delegate = self // to pass the function didAddCompany
         
         present(navigationController, animated: true, completion: nil)
     }
