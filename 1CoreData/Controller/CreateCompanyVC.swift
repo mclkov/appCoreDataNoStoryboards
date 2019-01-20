@@ -9,6 +9,14 @@
 import UIKit
 
 class CreateCompanyVC: UIViewController {
+    let nameLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Name"
+        label.backgroundColor = .green
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
