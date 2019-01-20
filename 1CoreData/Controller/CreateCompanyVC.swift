@@ -36,11 +36,11 @@ class CreateCompanyVC: UIViewController {
     
     @objc func saveButtonPressed() {
         dismiss(animated: true) {
-            self.saveCompanyActionAndAnimation()
+            self.saveCompanyAndAnimateTableUpdate()
         }
     }
     
-    func saveCompanyActionAndAnimation() {
+    func saveCompanyAndAnimateTableUpdate() {
         guard let name = nameTextField.text else { return }
         let company = Company(name: name, founded: Date())
         homeController?.addCompany(company: company)
