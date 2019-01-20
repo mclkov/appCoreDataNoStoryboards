@@ -30,21 +30,19 @@ class CreateCompanyVC: UIViewController {
         self.setupView()
     }
     
-    func dismissView() {
+    @objc func dismissByCancelPressed() {
         dismiss(animated: true, completion: nil)
     }
     
-    @objc func dismissByCancelPressed() {
-        self.dismissView()
+    @objc func saveButtonPressed() {
+        dismiss(animated: true) {
+            self.saveCompanyActionAndAnimation()
+        }
     }
     
-    @objc func saveButtonPressed() {
-        print("save works")
-        
+    func saveCompanyActionAndAnimation() {
         guard let name = nameTextField.text else { return }
         let company = Company(name: name, founded: Date())
         homeController?.addCompany(company: company)
-        
-        self.dismissView()
     }
 }
