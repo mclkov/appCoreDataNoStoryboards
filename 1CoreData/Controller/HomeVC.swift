@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeVC: UITableViewController {
+class HomeVC: UITableViewController, CreateCompanyControllerDelegate {
     var companies = [
         Company(name: "Apple", founded: Date()),
         Company(name: "SpaceX", founded: Date())
@@ -19,23 +19,21 @@ class HomeVC: UITableViewController {
         setupTableView()
     }
     
-    func amountOfRowsForTableView() -> Int {
-        return companies.count
-    }
-    
-    func addCompany(company: Company) {
+    func didAddCompany(company: Company) {
         self.companies.append(company)
         let nextIndexValue = companies.count - 1
         let newIndexPath = IndexPath(row: nextIndexValue, section: 0)
         tableView.insertRows(at: [newIndexPath], with: .automatic)
     }
     
+    func amountOfRowsForTableView() -> Int {
+        return companies.count
+    }
+    
     @objc func addCompanyPressed() {
         let createCompanyController = CreateCompanyVC()
         let navigationController = CustomNavigationController(rootViewController: createCompanyController)
-        
-        // link between controllers
-        createCompanyController.homeController = self
+        createCompanyController.delegate = self
         
         present(navigationController, animated: true, completion: nil)
     }

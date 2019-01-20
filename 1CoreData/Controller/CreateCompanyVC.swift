@@ -8,8 +8,12 @@
 
 import UIKit
 
+protocol CreateCompanyControllerDelegate {
+    func didAddCompany(company: Company)
+}
+
 class CreateCompanyVC: UIViewController {
-    var homeController: HomeVC?
+    var delegate: CreateCompanyControllerDelegate?
     
     let nameLabel: UILabel = {
         let label = UILabel()
@@ -43,6 +47,6 @@ class CreateCompanyVC: UIViewController {
     func saveCompanyAndAnimateTableUpdate() {
         guard let name = nameTextField.text else { return }
         let company = Company(name: name, founded: Date())
-        homeController?.addCompany(company: company)
+        self.delegate?.didAddCompany(company: company)
     }
 }
