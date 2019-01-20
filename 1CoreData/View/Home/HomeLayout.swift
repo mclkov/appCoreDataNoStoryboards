@@ -24,7 +24,7 @@ extension HomeVC {
     }
     
     func setupRightBarButtonItemAndAction() {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(self.addCompanyPressed))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(self.addCompanyPressed))
     }
     
     func setupColorOfRightBarButton() {

@@ -10,11 +10,16 @@ import UIKit
 
 extension CreateCompanyVC {
     func setupView() {
+        self.setupRightBarButtonItemAndAction()
         self.setupBackgroundColor()
         self.setupBackgroundView()
         self.setupNavigationItem()
         self.setupNameLabel()
         self.setupNameTextField()
+    }
+    
+    func setupRightBarButtonItemAndAction() {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(self.saveButtonPressed))
     }
     
     func setupBackgroundColor() {
@@ -51,14 +56,12 @@ extension CreateCompanyVC {
     
     func setupNameLabel() {
         view.addSubview(nameLabel)
-        nameLabel.backgroundColor = .yellow
-        self.setupAnchorsOfNameLabel()
+        self.setupNameLabelAnchors()
     }
     
-    func setupAnchorsOfNameLabel() {
+    func setupNameLabelAnchors() {
         nameLabel.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        nameLabel.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        nameLabel.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        nameLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
         
         nameLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
         nameLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
@@ -66,11 +69,13 @@ extension CreateCompanyVC {
     
     func setupNameTextField() {
         view.addSubview(nameTextField)
-        self.setupAnchorsOfNameTextField()
+        self.setupNameTextFieldAnchors()
     }
     
-    func setupAnchorsOfNameTextField() {
-        nameTextField.leftAnchor.constraint(equalTo: nameLabel.rightAnchor)
-        
+    func setupNameTextFieldAnchors() {
+        nameTextField.topAnchor.constraint(equalTo: nameLabel.topAnchor).isActive = true
+        nameTextField.leftAnchor.constraint(equalTo: nameLabel.rightAnchor).isActive = true
+        nameTextField.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        nameTextField.bottomAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
     }
 }

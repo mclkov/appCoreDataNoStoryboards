@@ -32,4 +32,8 @@ class CreateCompanyVC: UIViewController {
     @objc func dismissByCancelPressed() {
         dismiss(animated: true, completion: nil)
     }
+    
+    @objc func saveButtonPressed() {
+        print("save works")
+    }
 }
