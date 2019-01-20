@@ -97,10 +97,10 @@
 		601E70D921ECD7EC003011F8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				601E70ED21F32F16003011F8 /* Home */,
-				601E70EE21F32F33003011F8 /* CreateCompany */,
 				601E70D421ECD18F003011F8 /* ColorScheme.swift */,
 				601E70EB21F3253A003011F8 /* SetNavigationBarTheme.swift */,
+				601E70ED21F32F16003011F8 /* Home */,
+				601E70EE21F32F33003011F8 /* CreateCompany */,
 			);
 			path = View;
 			sourceTree = "<group>";

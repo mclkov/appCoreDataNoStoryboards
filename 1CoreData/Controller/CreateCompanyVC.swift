@@ -12,9 +12,15 @@ class CreateCompanyVC: UIViewController {
     let nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Name"
-        label.backgroundColor = .green
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
+    }()
+    
+    let nameTextField: UITextField = {
+       let textField = UITextField()
+        textField.placeholder = "Enter name"
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
     }()
     
     override func viewDidLoad() {

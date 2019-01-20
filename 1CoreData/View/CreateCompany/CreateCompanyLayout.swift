@@ -10,25 +10,30 @@ import UIKit
 
 extension CreateCompanyVC {
     func setupView() {
+        self.setupBackgroundColor()
         self.setupBackgroundView()
         self.setupNavigationItem()
         self.setupNameLabel()
+        self.setupNameTextField()
     }
     
-    func setupBackgroundView()
-    {
+    func setupBackgroundColor() {
+        view.backgroundColor = ColorScheme.darkBlue
+    }
+    
+    func setupBackgroundView() {
         let backgroundView = UIView()
-        backgroundView.translatesAutoresizingMaskIntoConstraints = false
         backgroundView.backgroundColor = ColorScheme.lightBlue
+        backgroundView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(backgroundView)
-        self.setupAnchorsToBoundaries(element: backgroundView)
+        self.setupAnchorsOfBackgroundView(reference: backgroundView)
     }
     
-    func setupAnchorsToBoundaries(element: UIView) {
-        element.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        element.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        element.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        element.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+    func setupAnchorsOfBackgroundView(reference: UIView) {
+        reference.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        reference.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        reference.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        reference.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     
     func setupNavigationItem() {
@@ -46,6 +51,7 @@ extension CreateCompanyVC {
     
     func setupNameLabel() {
         view.addSubview(nameLabel)
+        nameLabel.backgroundColor = .yellow
         self.setupAnchorsOfNameLabel()
     }
     
@@ -53,6 +59,18 @@ extension CreateCompanyVC {
         nameLabel.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         nameLabel.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         nameLabel.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        
+        nameLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
         nameLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    }
+    
+    func setupNameTextField() {
+        view.addSubview(nameTextField)
+        self.setupAnchorsOfNameTextField()
+    }
+    
+    func setupAnchorsOfNameTextField() {
+        nameTextField.leftAnchor.constraint(equalTo: nameLabel.rightAnchor)
+        
     }
 }
