@@ -9,6 +9,8 @@
 import UIKit
 
 class CreateCompanyVC: UIViewController {
+    var homeController: HomeVC?
+    
     let nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Name"
@@ -25,15 +27,24 @@ class CreateCompanyVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.setupView()
     }
     
-    @objc func dismissByCancelPressed() {
+    func dismissView() {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func dismissByCancelPressed() {
+        self.dismissView()
     }
     
     @objc func saveButtonPressed() {
         print("save works")
+        
+        guard let name = nameTextField.text else { return }
+        let company = Company(name: name, founded: Date())
+        homeController?.addCompany(company: company)
+        
+        self.dismissView()
     }
 }
