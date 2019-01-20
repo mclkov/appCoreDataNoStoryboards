@@ -10,14 +10,25 @@ import UIKit
 
 extension CreateCompanyVC {
     func setupView() {
-        self.setupBackgroundColor()
+        self.setupBackgroundView()
         self.setupNavigationItem()
-        
         self.setupNameLabel()
     }
     
-    func setupBackgroundColor() {
-        view.backgroundColor = .yellow
+    func setupBackgroundView()
+    {
+        let backgroundView = UIView()
+        backgroundView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundView.backgroundColor = ColorScheme.lightBlue
+        view.addSubview(backgroundView)
+        self.setupAnchorsToBoundaries(element: backgroundView)
+    }
+    
+    func setupAnchorsToBoundaries(element: UIView) {
+        element.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        element.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        element.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        element.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
     
     func setupNavigationItem() {
@@ -35,10 +46,10 @@ extension CreateCompanyVC {
     
     func setupNameLabel() {
         view.addSubview(nameLabel)
-        self.setupAnchorOfNameLabel()
+        self.setupAnchorsOfNameLabel()
     }
     
-    func setupAnchorOfNameLabel() {
+    func setupAnchorsOfNameLabel() {
         nameLabel.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         nameLabel.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         nameLabel.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
