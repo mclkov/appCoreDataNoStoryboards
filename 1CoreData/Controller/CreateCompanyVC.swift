@@ -56,7 +56,6 @@ class CreateCompanyVC: UIViewController {
         }
         let context = persistentContainer.viewContext
         let company = NSEntityDescription.insertNewObject(forEntityName: "Company", into: context)
-        
         company.setValue(name, forKey: "name")
         
         do {
