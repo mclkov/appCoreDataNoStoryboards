@@ -9,10 +9,7 @@
 import UIKit
 
 class HomeVC: UITableViewController, CreateCompanyControllerDelegate {
-    var companies = [
-        Company(name: "Apple", founded: Date()),
-        Company(name: "SpaceX", founded: Date())
-    ]
+    var companies = [Company]()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()

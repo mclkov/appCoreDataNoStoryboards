@@ -21,6 +21,7 @@
 		601E70E821F321BD003011F8 /* CreateCompanyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E70E721F321BD003011F8 /* CreateCompanyVC.swift */; };
 		601E70EA21F322DA003011F8 /* CreateCompanyLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E70E921F322DA003011F8 /* CreateCompanyLayout.swift */; };
 		601E70EC21F3253A003011F8 /* SetNavigationBarTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E70EB21F3253A003011F8 /* SetNavigationBarTheme.swift */; };
+		601E70F321F5F39B003011F8 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 601E70F121F5F39B003011F8 /* DataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		601E70E721F321BD003011F8 /* CreateCompanyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCompanyVC.swift; sourceTree = "<group>"; };
 		601E70E921F322DA003011F8 /* CreateCompanyLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCompanyLayout.swift; sourceTree = "<group>"; };
 		601E70EB21F3253A003011F8 /* SetNavigationBarTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNavigationBarTheme.swift; sourceTree = "<group>"; };
+		601E70F221F5F39B003011F8 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				601E70E221EFC2E4003011F8 /* Company.swift */,
+				601E70F121F5F39B003011F8 /* DataModel.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				601E70E121EE60F2003011F8 /* HomeConstants.swift in Sources */,
 				601E70DE21EE5D7A003011F8 /* HomeLayoutTableView.swift in Sources */,
 				601E70E821F321BD003011F8 /* CreateCompanyVC.swift in Sources */,
+				601E70F321F5F39B003011F8 /* DataModel.xcdatamodeld in Sources */,
 				601E70C121ECC40D003011F8 /* AppDelegate.swift in Sources */,
 				601E70E321EFC2E4003011F8 /* Company.swift in Sources */,
 			);
@@ -414,6 +418,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		601E70F121F5F39B003011F8 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				601E70F221F5F39B003011F8 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 601E70F221F5F39B003011F8 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 601E70B521ECC40D003011F8 /* Project object */;
 }

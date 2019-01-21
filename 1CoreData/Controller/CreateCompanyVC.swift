@@ -46,7 +46,10 @@ class CreateCompanyVC: UIViewController {
     
     func saveCompanyAndAnimateTableUpdate() {
         guard let name = nameTextField.text else { return }
-        let company = Company(name: name, founded: Date())
-        self.delegate?.didAddCompany(company: company)
+        
+        
+        
+//        let company = Company(name: name, founded: Date())
+//        self.delegate?.didAddCompany(company: company)
     }
 }
