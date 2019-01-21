@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeVC: UITableViewController, CreateCompanyControllerDelegate {
+class CompanyList: UITableViewController, CreateCompanyControllerDelegate {
     var companies = [Company]()
     override func viewDidLoad() {
         super.viewDidLoad()

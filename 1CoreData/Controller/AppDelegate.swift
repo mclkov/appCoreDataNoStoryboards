@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         window?.makeKeyAndVisible()
         
-        let homeViewController = HomeVC()
+        let homeViewController = CompanyList()
         
         let navigationController = CustomNavigationController(rootViewController: homeViewController)
         window?.rootViewController = navigationController

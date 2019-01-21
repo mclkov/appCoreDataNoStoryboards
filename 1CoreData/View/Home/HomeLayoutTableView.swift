@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension HomeVC {
+extension CompanyList {
     func setupTableView() {
         self.setupTableViewStyles()
         self.fillFooterEmptySpace()
