@@ -63,13 +63,13 @@ class CreateCompanyVC: UIViewController {
         
         do {
             try context.save()
-            self.animateTableViewAddingNew(companyManagedObject)
+            self.addWithAnimation(companyManagedObject)
         } catch let saveError {
             print("Failed to save company:", saveError)
         }
     }
     
-    func animateTableViewAddingNew(_ companyManagedObject: NSManagedObject) {
+    func addWithAnimation(_ companyManagedObject: NSManagedObject) {
         guard let company = companyManagedObject as? Company else { return }
         dismiss(animated: true) {
             self.delegate?.didAddCompany(company: company)

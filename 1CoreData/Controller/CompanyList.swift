@@ -45,13 +45,13 @@ class CompanyList: UITableViewController, CreateCompanyControllerDelegate {
         
         do {
             let resultFetch = try context.fetch(fetchRequest)            
-            self.updateTableViewOfCompanies(companiesArray: resultFetch)
+            self.updateCompanyList(companiesArray: resultFetch)
         } catch let fetchError {
             print("Failed to fetch companies:", fetchError)
         }
     }
     
-    func updateTableViewOfCompanies(companiesArray: [Company]) {
+    func updateCompanyList(companiesArray: [Company]) {
         self.companies = companiesArray
         self.tableView.reloadData()
     }
