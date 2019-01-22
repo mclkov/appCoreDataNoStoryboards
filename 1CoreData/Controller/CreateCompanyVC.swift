@@ -43,6 +43,10 @@ class CreateCompanyVC: UIViewController {
         self.saveCompanyAndAnimateTableUpdate()
     }
     
+    
+    // there is a catch with context inside dismissing - animateTableViewAddingNew() :
+    // after 'try context.save()' executes the rest of the function, except dismiss(closure)
+    // in fact, code in the closure is called after dismissal is fully complete; at that time `context` does not exist
     func saveCompanyAndAnimateTableUpdate() {
         guard let name = nameTextField.text else { return }
         
