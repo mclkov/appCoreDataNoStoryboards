@@ -51,12 +51,29 @@ class CompanyList: UITableViewController, CreateCompanyControllerDelegate {
         }
     }
     
-    func updateCompanyList(companiesArray: [Company]) {
+    private func updateCompanyList(companiesArray: [Company]) {
         self.companies = companiesArray
         self.tableView.reloadData()
     }
     
     func removeCompanyBy(indexPath: IndexPath) {
+        self.removeCompanyCoreData(indexPath);
+    }
+    
+    private func removeCompanyCoreData(_ indexPath: IndexPath) {
+        let context = CoreDataManager.shared.persistentContainer.viewContext
+        let company = self.companies[indexPath.row]
+        context.delete(company)
+        
+        do {
+            try context.save()
+            self.removeCompanyUI(indexPath)
+        } catch let saveError {
+            print("Failed to delete company", saveError)
+        }
+    }
+    
+    private func removeCompanyUI(_ indexPath: IndexPath) {
         companies.remove(at: indexPath.row)
         self.tableView.deleteRows(at: [indexPath], with: .automatic)
     }
