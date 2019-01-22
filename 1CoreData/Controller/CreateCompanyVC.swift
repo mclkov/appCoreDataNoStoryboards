@@ -63,8 +63,5 @@ class CreateCompanyVC: UIViewController {
         } catch let saveError {
             print("Failed to save company:", saveError)
         }
-        
-//        let company = Company(name: name, founded: Date())
-//        self.delegate?.didAddCompany(company: company)
     }
 }

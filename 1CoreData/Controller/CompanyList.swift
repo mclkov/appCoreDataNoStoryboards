@@ -50,13 +50,16 @@ class CompanyList: UITableViewController, CreateCompanyControllerDelegate {
         let fetchRequest = NSFetchRequest<Company>(entityName: "Company")
         
         do {
-            let resultFetch = try context.fetch(fetchRequest)
-            resultFetch.forEach { (company) in
-                print(company.name ?? "")
-            }
+            let resultFetch = try context.fetch(fetchRequest)            
+            self.updateTableViewOfCompanies(companiesArray: resultFetch)
         } catch let fetchError {
             print("Failed to fetch companies:", fetchError)
         }
+    }
+    
+    func updateTableViewOfCompanies(companiesArray: [Company]) {
+        self.companies = companiesArray
+        self.tableView.reloadData()
     }
 }
 
