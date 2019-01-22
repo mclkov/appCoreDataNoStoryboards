@@ -40,9 +40,7 @@ class CreateCompanyVC: UIViewController {
     }
     
     @objc func saveButtonPressed() {
-        dismiss(animated: true) {
-            self.saveCompanyAndAnimateTableUpdate()
-        }
+        self.saveCompanyAndAnimateTableUpdate()
     }
     
     func saveCompanyAndAnimateTableUpdate() {
@@ -55,13 +53,21 @@ class CreateCompanyVC: UIViewController {
             }
         }
         let context = persistentContainer.viewContext
-        let company = NSEntityDescription.insertNewObject(forEntityName: "Company", into: context)
-        company.setValue(name, forKey: "name")
+        let companyManagedObject = NSEntityDescription.insertNewObject(forEntityName: "Company", into: context)
+        companyManagedObject.setValue(name, forKey: "name")
         
         do {
             try context.save()
+            self.animateTableViewAddingNew(companyManagedObject)
         } catch let saveError {
             print("Failed to save company:", saveError)
+        }
+    }
+    
+    func animateTableViewAddingNew(_ companyManagedObject: NSManagedObject) {
+        guard let company = companyManagedObject as? Company else { return }
+        dismiss(animated: true) {
+            self.delegate?.didAddCompany(company: company)
         }
     }
 }
