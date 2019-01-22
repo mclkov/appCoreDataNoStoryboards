@@ -55,5 +55,10 @@ class CompanyList: UITableViewController, CreateCompanyControllerDelegate {
         self.companies = companiesArray
         self.tableView.reloadData()
     }
+    
+    func removeCompanyBy(indexPath: IndexPath) {
+        companies.remove(at: indexPath.row)
+        self.tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
 }
 

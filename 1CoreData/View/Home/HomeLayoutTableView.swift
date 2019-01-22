@@ -71,13 +71,13 @@ extension CompanyList {
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
-            
+            self.removeCompanyBy(indexPath: indexPath)
         }
         
         let editAction = UITableViewRowAction(style: .normal, title: "Edit") { (action, indexPath) in
             
         }
         
-        return [editAction, deleteAction]
+        return [deleteAction, editAction]
     }
 }
