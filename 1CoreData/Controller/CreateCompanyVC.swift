@@ -49,14 +49,15 @@ class CreateCompanyVC: UIViewController {
     // in fact, code in the closure is called after dismissal is fully complete; at that time `context` does not exist
     func saveCompanyAndAnimateTableUpdate() {
         guard let name = nameTextField.text else { return }
+//        let persistentContainer = NSPersistentContainer(name: "DataModel")
+//        persistentContainer.loadPersistentStores { (storeDescritpion, error) in
+//            if let error = error {
+//                fatalError("Loading of store failed \(error)")
+//            }
+//        }
+//        let context = persistentContainer.viewContext
         
-        let persistentContainer = NSPersistentContainer(name: "DataModel")
-        persistentContainer.loadPersistentStores { (storeDescritpion, error) in
-            if let error = error {
-                fatalError("Loading of store failed \(error)")
-            }
-        }
-        let context = persistentContainer.viewContext
+        let context = CoreDataManager.shared.persistentContainer.viewContext
         let companyManagedObject = NSEntityDescription.insertNewObject(forEntityName: "Company", into: context)
         companyManagedObject.setValue(name, forKey: "name")
         
