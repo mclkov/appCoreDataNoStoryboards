@@ -39,13 +39,7 @@ class CompanyList: UITableViewController, CreateCompanyControllerDelegate {
     }
     
     func fetchCompanies() {
-        let persistentContainer = NSPersistentContainer(name: "DataModel")
-        persistentContainer.loadPersistentStores { (storeDescritpion, error) in
-            if let error = error {
-                fatalError("Loading of store failed \(error)")
-            }
-        }
-        let context = persistentContainer.viewContext
+        let context = CoreDataManager.shared.persistentContainer.viewContext
         // let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Company") // the next line does the same, but is more specific "<Company>"
         let fetchRequest = NSFetchRequest<Company>(entityName: "Company")
         
