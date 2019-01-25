@@ -8,11 +8,6 @@
 
 import UIKit
 
-protocol CompanyFactoryLayoutDelegate {
-    func setupRightBarButtonItemAndAction()
-    func setupLeftBarButtonItemAndAction()
-}
-
 class CompanyFactoryLayout: UIViewController {
     let nameLabel: UILabel = {
         let label = UILabel()
@@ -55,11 +50,6 @@ class CompanyFactoryLayout: UIViewController {
     }
     
     func setupNavigationItem(title: String) {
-        self.setupNavigationTitle(title)
-        self.setupLeftBarButtonItemAndAction()
-    }
-    
-    func setupNavigationTitle(_ title: String) {
         self.navigationItem.title = title
     }
     

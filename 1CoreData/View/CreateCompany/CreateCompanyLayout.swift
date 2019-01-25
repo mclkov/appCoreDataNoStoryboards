@@ -9,6 +9,10 @@
 import UIKit
 
 extension CreateCompanyVC {
+    func setupLocalView() {
+        self.setupLeftBarButtonItemAndAction()
+        self.setupRightBarButtonItemAndAction()
+    }
     func setupLeftBarButtonItemAndAction() {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancle", style: .plain, target: self, action: #selector(self.dismissByCancelPressed))
     }

@@ -16,10 +16,14 @@ protocol CreateCompanyControllerDelegate {
 class CreateCompanyVC: CompanyFactoryLayout {
     var delegate: CreateCompanyControllerDelegate?
     
+    override func setupView() {
+        super.setupView()
+        self.setupLocalView()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
-        
     }
     
     @objc func dismissByCancelPressed() {
