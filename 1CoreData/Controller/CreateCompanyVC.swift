@@ -13,26 +13,13 @@ protocol CreateCompanyControllerDelegate {
     func didAddCompany(company: Company)
 }
 
-class CreateCompanyVC: UIViewController {
+class CreateCompanyVC: CompanyFactoryLayout {
     var delegate: CreateCompanyControllerDelegate?
-    
-    let nameLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Name"
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let nameTextField: UITextField = {
-       let textField = UITextField()
-        textField.placeholder = "Enter name"
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        return textField
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
+        
     }
     
     @objc func dismissByCancelPressed() {

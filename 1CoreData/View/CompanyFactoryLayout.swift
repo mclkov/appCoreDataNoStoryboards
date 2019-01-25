@@ -8,7 +8,12 @@
 
 import UIKit
 
-class CompanyFactory: UIViewController {
+protocol CompanyFactoryLayoutDelegate {
+    func setupRightBarButtonItemAndAction()
+    func setupLeftBarButtonItemAndAction()
+}
+
+class CompanyFactoryLayout: UIViewController {
     let nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Name"
@@ -24,15 +29,10 @@ class CompanyFactory: UIViewController {
     }()
     
     func setupView() {
-        self.setupRightBarButtonItemAndAction()
         self.setupBackgroundColor()
         self.setupBackgroundView()
         self.setupNameLabel()
         self.setupNameTextField()
-    }
-    
-    func setupRightBarButtonItemAndAction() {
-//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(self.saveButtonPressed))
     }
     
     func setupBackgroundColor() {
@@ -61,10 +61,6 @@ class CompanyFactory: UIViewController {
     
     func setupNavigationTitle(_ title: String) {
         self.navigationItem.title = title
-    }
-    
-    func setupLeftBarButtonItemAndAction() {
-        //self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancle", style: .plain, target: self, action: #selector(self.dismissByCancelPressed))
     }
     
     func setupNameLabel() {
