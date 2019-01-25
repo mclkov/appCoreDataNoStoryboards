@@ -9,6 +9,7 @@
 import UIKit
 
 protocol CompanyFactoryLayoutDelegate {
+    var navigationBarActionFunctionsImplemented: Bool { get }
     func dismissByCancelPressed()
     func saveButtonPressed()
 }
