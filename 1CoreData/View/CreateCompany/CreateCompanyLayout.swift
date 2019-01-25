@@ -13,7 +13,6 @@ extension CreateCompanyVC {
         self.setupRightBarButtonItemAndAction()
         self.setupBackgroundColor()
         self.setupBackgroundView()
-        self.setupNavigationItem()
         self.setupNameLabel()
         self.setupNameTextField()
     }
@@ -41,13 +40,13 @@ extension CreateCompanyVC {
         reference.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     
-    func setupNavigationItem() {
-        self.setupNavigationTitle()
+    func setupNavigationItem(title: String) {
+        self.setupNavigationTitle(title)
         self.setupLeftBarButtonItemAndAction()
     }
     
-    func setupNavigationTitle() {
-        navigationItem.title = "Create company"
+    func setupNavigationTitle(_ title: String) {
+        navigationItem.title = title
     }
     
     func setupLeftBarButtonItemAndAction() {

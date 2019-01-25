@@ -38,6 +38,7 @@ class CompanyList: UITableViewController, CreateCompanyControllerDelegate {
         let createCompanyController = CreateCompanyVC()
         let navigationController = CustomNavigationController(rootViewController: createCompanyController)
         createCompanyController.delegate = self // to pass the function didAddCompany
+        createCompanyController.setupNavigationItem(title: "Create Company")
         
         present(navigationController, animated: true, completion: nil)
     }
@@ -83,7 +84,15 @@ class CompanyList: UITableViewController, CreateCompanyControllerDelegate {
     }
     
     func editCompanyBy(indexPath: IndexPath) {
-        
+        self.presentViewEditCompany()
+    }
+    
+    private func presentViewEditCompany() {
+        let editCompanyController = CreateCompanyVC()
+        editCompanyController.setupNavigationItem(title: "Edit Company")
+        let navigationController = CustomNavigationController(rootViewController: editCompanyController)
+    
+        present(navigationController, animated: true, completion: nil)
     }
 }
 
