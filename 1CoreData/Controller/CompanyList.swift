@@ -30,7 +30,11 @@ class CompanyList: UITableViewController, CreateCompanyControllerDelegate {
         return companies.count
     }
     
-    @objc func presentViewCreateCompany() {
+    @objc func addCompanyPressed() {
+        self.presentViewCreateCompany()
+    }
+    
+    private func presentViewCreateCompany() {
         let createCompanyController = CreateCompanyVC()
         let navigationController = CustomNavigationController(rootViewController: createCompanyController)
         createCompanyController.delegate = self // to pass the function didAddCompany
