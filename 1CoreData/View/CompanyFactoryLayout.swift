@@ -46,7 +46,7 @@ class CompanyFactoryLayout: UIViewController {
         self.setupNameTextField()
     }
     
-    func setupLeftBarButtonItemAndAction() {
+    private func setupLeftBarButtonItemAndAction() {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancle", style: .plain, target: self, action: #selector(self.dismissByCancelPressed))
     }
     
@@ -54,7 +54,7 @@ class CompanyFactoryLayout: UIViewController {
         //
     }
     
-    func setupRightBarButtonItemAndAction() {
+    private func setupRightBarButtonItemAndAction() {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(self.saveButtonPressed))
     }
     
@@ -62,11 +62,11 @@ class CompanyFactoryLayout: UIViewController {
         //
     }
     
-    func setupBackgroundColor() {
+    private func setupBackgroundColor() {
         view.backgroundColor = ColorScheme.darkBlue
     }
     
-    func setupBackgroundView() {
+    private func setupBackgroundView() {
         let backgroundView = UIView()
         backgroundView.backgroundColor = ColorScheme.lightBlue
         backgroundView.translatesAutoresizingMaskIntoConstraints = false
@@ -74,19 +74,19 @@ class CompanyFactoryLayout: UIViewController {
         self.setupAnchorsOfBackgroundView(reference: backgroundView)
     }
     
-    func setupAnchorsOfBackgroundView(reference: UIView) {
+    private func setupAnchorsOfBackgroundView(reference: UIView) {
         reference.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         reference.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         reference.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         reference.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     
-    func setupNameLabel() {
+    private func setupNameLabel() {
         view.addSubview(nameLabel)
         self.setupNameLabelAnchors()
     }
     
-    func setupNameLabelAnchors() {
+    private func setupNameLabelAnchors() {
         nameLabel.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         nameLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
         
@@ -94,12 +94,12 @@ class CompanyFactoryLayout: UIViewController {
         nameLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     
-    func setupNameTextField() {
+    private func setupNameTextField() {
         view.addSubview(nameTextField)
         self.setupNameTextFieldAnchors()
     }
     
-    func setupNameTextFieldAnchors() {
+    private func setupNameTextFieldAnchors() {
         nameTextField.topAnchor.constraint(equalTo: nameLabel.topAnchor).isActive = true
         nameTextField.leftAnchor.constraint(equalTo: nameLabel.rightAnchor).isActive = true
         nameTextField.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true

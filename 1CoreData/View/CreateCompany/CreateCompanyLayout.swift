@@ -10,6 +10,6 @@ import UIKit
 
 extension CreateCompanyVC {
     func setupLocalView() {
-        
+        self.setupNavigationItem(title: "Create Company")
     }
 }
