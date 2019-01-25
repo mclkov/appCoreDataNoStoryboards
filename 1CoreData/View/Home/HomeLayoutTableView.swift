@@ -73,10 +73,12 @@ extension CompanyList {
         let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
             self.removeCompanyBy(indexPath: indexPath)
         }
+        deleteAction.backgroundColor = ColorScheme.lightRed
         
         let editAction = UITableViewRowAction(style: .normal, title: "Edit") { (action, indexPath) in
             self.editCompanyBy(indexPath: indexPath)
         }
+        editAction.backgroundColor = ColorScheme.darkBlue
         
         return [deleteAction, editAction]
     }
