@@ -9,13 +9,14 @@
 import UIKit
 import CoreData
 
-protocol CreateCompanyControllerDelegate {
+protocol CompanyDataDelegate {
     func didAddCompany(company: Company)
+    func didEditCompany(company: Company)
 }
 
 class CreateCompanyVC: CompanyFactoryLayout, CompanyFactoryLayoutDelegate {
     var navigationBarActionFunctionsImplemented = true
-    var delegate: CreateCompanyControllerDelegate?
+    var delegate: CompanyDataDelegate?
     
     override func setupView() {
         super.setupView()

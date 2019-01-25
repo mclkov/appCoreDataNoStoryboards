@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class CompanyList: UITableViewController, CreateCompanyControllerDelegate {
+class CompanyList: UITableViewController, CompanyDataDelegate {
     var companies = [Company]()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +17,14 @@ class CompanyList: UITableViewController, CreateCompanyControllerDelegate {
         self.fetchCompanies()
         self.setupView()
         self.setupTableView()
+    }
+    
+    func didEditCompany(company: Company) {
+        print("reachable")
+        let row = self.companies.index(of: company)
+        let indexPath = IndexPath(row: row!, section: 0)
+
+        tableView.reloadRows(at: [indexPath], with: .middle)
     }
     
     func didAddCompany(company: Company) {
@@ -36,9 +44,10 @@ class CompanyList: UITableViewController, CreateCompanyControllerDelegate {
     
     private func presentViewCreateCompany() {
         let createCompanyController = CreateCompanyVC()
-        let navigationController = CustomNavigationController(rootViewController: createCompanyController)
         createCompanyController.delegate = self // to pass the function didAddCompany
         createCompanyController.setupNavigationItem(title: "Create Company")
+        
+        let navigationController = CustomNavigationController(rootViewController: createCompanyController)
         
         present(navigationController, animated: true, completion: nil)
     }
@@ -91,6 +100,7 @@ class CompanyList: UITableViewController, CreateCompanyControllerDelegate {
     private func presentViewEditCompany(_ company: Company) {
         let editCompanyController = EditCompanyVC()
         editCompanyController.company = company
+        editCompanyController.delegate = self
         
         let navigationController = CustomNavigationController(rootViewController: editCompanyController)
     
