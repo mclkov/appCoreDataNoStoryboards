@@ -23,6 +23,11 @@ class CompanyFactoryLayout: UIViewController {
         return textField
     }()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.setupView()
+    }
+    
     func setupView() {
         self.setupBackgroundColor()
         self.setupBackgroundView()

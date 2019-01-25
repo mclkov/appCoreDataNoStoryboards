@@ -21,11 +21,6 @@ class CreateCompanyVC: CompanyFactoryLayout {
         self.setupLocalView()
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.setupView()
-    }
-    
     @objc func dismissByCancelPressed() {
         dismiss(animated: true, completion: nil)
     }
