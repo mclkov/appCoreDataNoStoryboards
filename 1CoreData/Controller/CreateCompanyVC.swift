@@ -14,7 +14,7 @@ protocol CreateCompanyControllerDelegate {
 }
 
 class CreateCompanyVC: CompanyFactoryLayout, CompanyFactoryLayoutDelegate {
-    var navigationBarActionFunctionsImplemented: Bool = true
+    var navigationBarActionFunctionsImplemented = true
     var delegate: CreateCompanyControllerDelegate?
     
     override func setupView() {

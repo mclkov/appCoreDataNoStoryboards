@@ -84,12 +84,14 @@ class CompanyList: UITableViewController, CreateCompanyControllerDelegate {
     }
     
     func editCompanyBy(indexPath: IndexPath) {
-        self.presentViewEditCompany()
+        let company = companies[indexPath.row]
+        self.presentViewEditCompany(company)
     }
     
-    private func presentViewEditCompany() {
-        let editCompanyController = CreateCompanyVC()
-        editCompanyController.setupNavigationItem(title: "Edit Company")
+    private func presentViewEditCompany(_ company: Company) {
+        let editCompanyController = EditCompanyVC()
+        editCompanyController.setupCompanyNameTextField(name: company.name ?? "")
+        
         let navigationController = CustomNavigationController(rootViewController: editCompanyController)
     
         present(navigationController, animated: true, completion: nil)
