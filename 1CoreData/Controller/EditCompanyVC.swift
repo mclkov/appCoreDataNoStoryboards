@@ -11,6 +11,7 @@ import CoreData
 
 class EditCompanyVC: CompanyFactoryLayout, CompanyFactoryLayoutDelegate {
     var navigationBarActionFunctionsImplemented = true
+    var company: Company?
     
     override func setupView() {
         super.setupView()

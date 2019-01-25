@@ -90,7 +90,7 @@ class CompanyList: UITableViewController, CreateCompanyControllerDelegate {
     
     private func presentViewEditCompany(_ company: Company) {
         let editCompanyController = EditCompanyVC()
-        editCompanyController.setupCompanyNameTextField(name: company.name ?? "")
+        editCompanyController.company = company
         
         let navigationController = CustomNavigationController(rootViewController: editCompanyController)
     

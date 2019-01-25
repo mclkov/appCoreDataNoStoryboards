@@ -11,9 +11,10 @@ import UIKit
 extension EditCompanyVC {
     func setupLocalView() {
         self.setupNavigationItem(title: "Edit Company")
+        self.setupCompanyNameTextField()
     }
     
-    func setupCompanyNameTextField(name: String) {
-        self.nameTextField.text = name
+    func setupCompanyNameTextField() {
+        self.nameTextField.text = self.company?.name
     }
 }
