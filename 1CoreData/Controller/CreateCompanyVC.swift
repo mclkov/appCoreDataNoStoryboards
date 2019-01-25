@@ -21,11 +21,11 @@ class CreateCompanyVC: CompanyFactoryLayout {
         self.setupLocalView()
     }
     
-    @objc func dismissByCancelPressed() {
+    @objc override func dismissByCancelPressed() {
         dismiss(animated: true, completion: nil)
     }
     
-    @objc func saveButtonPressed() {
+    @objc override func saveButtonPressed() {
         self.saveCompanyAndUpdateTableView()
     }
     

@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol CompanyFactoryLayoutDelegate {
+    func dismissByCancelPressed()
+    func saveButtonPressed()
+}
+
 class CompanyFactoryLayout: UIViewController {
     let nameLabel: UILabel = {
         let label = UILabel()
@@ -28,11 +33,33 @@ class CompanyFactoryLayout: UIViewController {
         self.setupView()
     }
     
+    func setupNavigationItem(title: String) {
+        self.navigationItem.title = title
+    }
+    
     func setupView() {
+        self.setupLeftBarButtonItemAndAction()
+        self.setupRightBarButtonItemAndAction()
         self.setupBackgroundColor()
         self.setupBackgroundView()
         self.setupNameLabel()
         self.setupNameTextField()
+    }
+    
+    func setupLeftBarButtonItemAndAction() {
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancle", style: .plain, target: self, action: #selector(self.dismissByCancelPressed))
+    }
+    
+    @objc func dismissByCancelPressed() {
+        //
+    }
+    
+    func setupRightBarButtonItemAndAction() {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(self.saveButtonPressed))
+    }
+    
+    @objc func saveButtonPressed() {
+        //
     }
     
     func setupBackgroundColor() {
@@ -52,10 +79,6 @@ class CompanyFactoryLayout: UIViewController {
         reference.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         reference.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         reference.heightAnchor.constraint(equalToConstant: 50).isActive = true
-    }
-    
-    func setupNavigationItem(title: String) {
-        self.navigationItem.title = title
     }
     
     func setupNameLabel() {
