@@ -30,7 +30,7 @@ class CompanyList: UITableViewController, CreateCompanyControllerDelegate {
         return companies.count
     }
     
-    @objc func addCompanyPressed() {
+    @objc func presentViewCreateCompany() {
         let createCompanyController = CreateCompanyVC()
         let navigationController = CustomNavigationController(rootViewController: createCompanyController)
         createCompanyController.delegate = self // to pass the function didAddCompany
@@ -76,6 +76,10 @@ class CompanyList: UITableViewController, CreateCompanyControllerDelegate {
     private func removeCompanyFromUI(_ indexPath: IndexPath) {
         companies.remove(at: indexPath.row)
         self.tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
+    
+    func editCompanyBy(indexPath: IndexPath) {
+        
     }
 }
 

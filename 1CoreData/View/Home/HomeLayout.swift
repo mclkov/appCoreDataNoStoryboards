@@ -24,7 +24,7 @@ extension CompanyList {
     }
     
     func setupRightBarButtonItemAndAction() {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(self.addCompanyPressed))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(self.presentViewCreateCompany))
     }
     
     func setupColorOfRightBarButton() {

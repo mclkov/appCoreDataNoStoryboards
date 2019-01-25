@@ -75,7 +75,7 @@ extension CompanyList {
         }
         
         let editAction = UITableViewRowAction(style: .normal, title: "Edit") { (action, indexPath) in
-            
+            self.editCompanyBy(indexPath: indexPath)
         }
         
         return [deleteAction, editAction]
