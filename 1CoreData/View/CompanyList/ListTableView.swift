@@ -32,10 +32,19 @@ extension CompanyList {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let emptyCell = tableView.dequeueReusableCell(withIdentifier: HomeConstants.cellReuseId, for: indexPath)
         let cell = configureCell(emptyCell)
-        
         let company = self.companies[indexPath.row]
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM dd, yyyy"
         
-        cell.textLabel?.text = company.name
+        var cellInfo = ""
+        if let name = company.name, let founded = company.founded {
+            let foundedDateString = dateFormatter.string(from: founded)
+            cellInfo = "\(name), founded: \(foundedDateString)"
+        }else{
+            cellInfo = company.name ?? ""
+        }
+        
+        cell.textLabel?.text = cellInfo
         cell.textLabel?.textColor = .white
         
         return cell

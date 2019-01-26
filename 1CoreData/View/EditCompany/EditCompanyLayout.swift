@@ -15,6 +15,12 @@ extension EditCompanyVC {
     }
     
     func setupCompanyNameTextField() {
-        self.nameTextField.text = self.company?.name
+        if let name = self.company?.name {
+            self.nameTextField.text = name
+        }
+
+        if let founded = self.company?.founded {
+            self.datePicker.setDate(founded, animated: false)
+        }
     }
 }

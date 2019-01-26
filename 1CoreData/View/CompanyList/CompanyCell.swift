@@ -10,9 +10,17 @@ import UIKit
 
 class CompanyCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var founded: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    func configureCell(company: Company) {
+        self.backgroundColor = ColorScheme.teal
+        self.name.text = company.name ?? ""
+        
+//        self.founded.text = company.founded ?? ""
     }
 }
