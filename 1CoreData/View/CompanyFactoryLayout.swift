@@ -121,6 +121,7 @@ class CompanyFactoryLayout: UIViewController {
     private func setupDataPicker() {
         view.addSubview(datePicker)
         self.setupDataPickerAnchors()
+        self.setupDatePickerFormat()
     }
     
     private func setupDataPickerAnchors() {
@@ -128,5 +129,9 @@ class CompanyFactoryLayout: UIViewController {
         datePicker.leftAnchor.constraint(equalTo: backgroundView.leftAnchor).isActive = true
         datePicker.rightAnchor.constraint(equalTo: backgroundView.rightAnchor).isActive = true
         datePicker.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor).isActive = true
+    }
+    
+    private func setupDatePickerFormat() {
+        datePicker.datePickerMode = .date
     }
 }

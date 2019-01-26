@@ -41,6 +41,7 @@ class CreateCompanyVC: CompanyFactoryLayout, CompanyFactoryLayoutDelegate {
         let context = CoreDataManager.shared.persistentContainer.viewContext
         let companyManagedObject = NSEntityDescription.insertNewObject(forEntityName: "Company", into: context)
         companyManagedObject.setValue(name, forKey: "name")
+        companyManagedObject.setValue(datePicker.date, forKey: "founded")
         
         do {
             try context.save()

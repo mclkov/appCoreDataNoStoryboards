@@ -13,8 +13,8 @@
 		601E70CB21ECC40E003011F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 601E70C921ECC40E003011F8 /* LaunchScreen.storyboard */; };
 		601E70D321ECCE4C003011F8 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E70D221ECCE4C003011F8 /* CustomNavigationController.swift */; };
 		601E70D521ECD18F003011F8 /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E70D421ECD18F003011F8 /* ColorScheme.swift */; };
-		601E70D721ECD7D8003011F8 /* HomeLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E70D621ECD7D8003011F8 /* HomeLayout.swift */; };
-		601E70DE21EE5D7A003011F8 /* HomeLayoutTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E70DD21EE5D7A003011F8 /* HomeLayoutTableView.swift */; };
+		601E70D721ECD7D8003011F8 /* CompanyListLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E70D621ECD7D8003011F8 /* CompanyListLayout.swift */; };
+		601E70DE21EE5D7A003011F8 /* CompanyListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E70DD21EE5D7A003011F8 /* CompanyListTableView.swift */; };
 		601E70E121EE60F2003011F8 /* HomeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E70E021EE60F2003011F8 /* HomeConstants.swift */; };
 		601E70E321EFC2E4003011F8 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E70E221EFC2E4003011F8 /* Company.swift */; };
 		601E70E521EFC61F003011F8 /* CompanyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E70E421EFC61F003011F8 /* CompanyCell.swift */; };
@@ -37,8 +37,8 @@
 		601E70CC21ECC40E003011F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		601E70D221ECCE4C003011F8 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		601E70D421ECD18F003011F8 /* ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
-		601E70D621ECD7D8003011F8 /* HomeLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLayout.swift; sourceTree = "<group>"; };
-		601E70DD21EE5D7A003011F8 /* HomeLayoutTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLayoutTableView.swift; sourceTree = "<group>"; };
+		601E70D621ECD7D8003011F8 /* CompanyListLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyListLayout.swift; sourceTree = "<group>"; };
+		601E70DD21EE5D7A003011F8 /* CompanyListTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyListTableView.swift; sourceTree = "<group>"; };
 		601E70E021EE60F2003011F8 /* HomeConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeConstants.swift; sourceTree = "<group>"; };
 		601E70E221EFC2E4003011F8 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		601E70E421EFC61F003011F8 /* CompanyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyCell.swift; sourceTree = "<group>"; };
@@ -139,8 +139,8 @@
 		601E70ED21F32F16003011F8 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				601E70D621ECD7D8003011F8 /* HomeLayout.swift */,
-				601E70DD21EE5D7A003011F8 /* HomeLayoutTableView.swift */,
+				601E70D621ECD7D8003011F8 /* CompanyListLayout.swift */,
+				601E70DD21EE5D7A003011F8 /* CompanyListTableView.swift */,
 				601E70E421EFC61F003011F8 /* CompanyCell.swift */,
 			);
 			path = Home;
@@ -245,12 +245,12 @@
 				601E70EC21F3253A003011F8 /* SetNavigationBarTheme.swift in Sources */,
 				601E70C321ECC40D003011F8 /* CompanyList.swift in Sources */,
 				601E717F21FB6EFB003011F8 /* EditCompanyVC.swift in Sources */,
-				601E70D721ECD7D8003011F8 /* HomeLayout.swift in Sources */,
+				601E70D721ECD7D8003011F8 /* CompanyListLayout.swift in Sources */,
 				601E70E521EFC61F003011F8 /* CompanyCell.swift in Sources */,
 				601E70EA21F322DA003011F8 /* CreateCompanyLayout.swift in Sources */,
 				601E70E121EE60F2003011F8 /* HomeConstants.swift in Sources */,
 				601E718221FB72DD003011F8 /* EditCompanyLayout.swift in Sources */,
-				601E70DE21EE5D7A003011F8 /* HomeLayoutTableView.swift in Sources */,
+				601E70DE21EE5D7A003011F8 /* CompanyListTableView.swift in Sources */,
 				601E70E821F321BD003011F8 /* CreateCompanyVC.swift in Sources */,
 				601E70F321F5F39B003011F8 /* DataModel.xcdatamodeld in Sources */,
 				601E70C121ECC40D003011F8 /* AppDelegate.swift in Sources */,
