@@ -29,6 +29,7 @@ class EditCompanyVC: CompanyFactoryLayout, CompanyFactoryLayoutDelegate {
         
         let context = CoreDataManager.shared.persistentContainer.viewContext
         self.company?.name = name
+        self.company?.founded = datePicker.date
         
         do {
             try context.save()
