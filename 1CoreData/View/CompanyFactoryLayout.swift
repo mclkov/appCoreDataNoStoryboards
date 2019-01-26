@@ -15,6 +15,13 @@ protocol CompanyFactoryLayoutDelegate {
 }
 
 class CompanyFactoryLayout: UIViewController {
+    let backgroundView: UIView = {
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = ColorScheme.lightBlue
+        backgroundView.translatesAutoresizingMaskIntoConstraints = false
+        return backgroundView
+    }()
+    
     let nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Name"
@@ -27,6 +34,12 @@ class CompanyFactoryLayout: UIViewController {
         textField.placeholder = "Enter name"
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
+    }()
+    
+    let datePicker: UIDatePicker = {
+       let picker = UIDatePicker()
+        picker.translatesAutoresizingMaskIntoConstraints = false
+        return picker
     }()
     
     override func viewDidLoad() {
@@ -45,6 +58,7 @@ class CompanyFactoryLayout: UIViewController {
         self.setupBackgroundView()
         self.setupNameLabel()
         self.setupNameTextField()
+        self.setupDataPicker()
     }
     
     private func setupLeftBarButtonItemAndAction() {
@@ -68,18 +82,15 @@ class CompanyFactoryLayout: UIViewController {
     }
     
     private func setupBackgroundView() {
-        let backgroundView = UIView()
-        backgroundView.backgroundColor = ColorScheme.lightBlue
-        backgroundView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(backgroundView)
-        self.setupAnchorsOfBackgroundView(reference: backgroundView)
+        self.setupAnchorsOfBackgroundView()
     }
     
-    private func setupAnchorsOfBackgroundView(reference: UIView) {
-        reference.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        reference.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        reference.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        reference.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    private func setupAnchorsOfBackgroundView() {
+        backgroundView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        backgroundView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        backgroundView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        backgroundView.heightAnchor.constraint(equalToConstant: 250).isActive = true
     }
     
     private func setupNameLabel() {
@@ -105,5 +116,17 @@ class CompanyFactoryLayout: UIViewController {
         nameTextField.leftAnchor.constraint(equalTo: nameLabel.rightAnchor).isActive = true
         nameTextField.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         nameTextField.bottomAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
+    }
+    
+    private func setupDataPicker() {
+        view.addSubview(datePicker)
+        self.setupDataPickerAnchors()
+    }
+    
+    private func setupDataPickerAnchors() {
+        datePicker.topAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
+        datePicker.leftAnchor.constraint(equalTo: backgroundView.leftAnchor).isActive = true
+        datePicker.rightAnchor.constraint(equalTo: backgroundView.rightAnchor).isActive = true
+        datePicker.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor).isActive = true
     }
 }
