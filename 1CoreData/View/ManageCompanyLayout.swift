@@ -108,7 +108,7 @@ class ManageCompanyLayout: UIViewController {
     }
     
     private func setupCompanyImageAnchors() {
-        companyImageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        companyImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 8).isActive = true
         companyImageView.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
         companyImageView.heightAnchor.constraint(equalToConstant: 100.0).isActive = true
         companyImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
