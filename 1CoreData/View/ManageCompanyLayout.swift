@@ -14,7 +14,7 @@ protocol ManageCompanyLayoutDelegate {
     func saveButtonPressed()
 }
 
-class ManageCompanyLayout: UIViewController {
+class ManageCompanyLayout: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     let backgroundView: UIView = {
         let backgroundView = UIView()
         backgroundView.backgroundColor = ColorScheme.lightBlue
@@ -113,7 +113,20 @@ class ManageCompanyLayout: UIViewController {
     @objc func presentViewSelectPhoto() {
         print("works")
         let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
         present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        print(info)
+        if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            companyImageView.image = originalImage
+        }
+        dismiss(animated: true, completion: nil)
     }
     
     private func setupCompanyImageAnchors() {
