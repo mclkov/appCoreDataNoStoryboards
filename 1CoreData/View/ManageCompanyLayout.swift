@@ -22,6 +22,14 @@ class ManageCompanyLayout: UIViewController {
         return backgroundView
     }()
     
+    let companyImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "no_image")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
     let nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Name"
@@ -56,6 +64,7 @@ class ManageCompanyLayout: UIViewController {
         self.setupRightBarButtonItemAndAction()
         self.setupBackgroundColor()
         self.setupBackgroundView()
+        self.setupCompanyImage()
         self.setupNameLabel()
         self.setupNameTextField()
         self.setupDataPicker()
@@ -83,14 +92,26 @@ class ManageCompanyLayout: UIViewController {
     
     private func setupBackgroundView() {
         view.addSubview(backgroundView)
-        self.setupAnchorsOfBackgroundView()
+        self.setupBackgroundViewAnchors()
     }
     
-    private func setupAnchorsOfBackgroundView() {
+    private func setupBackgroundViewAnchors() {
         backgroundView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         backgroundView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         backgroundView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        backgroundView.heightAnchor.constraint(equalToConstant: 250).isActive = true
+        backgroundView.heightAnchor.constraint(equalToConstant: 350).isActive = true
+    }
+    
+    private func setupCompanyImage() {
+        view.addSubview(companyImageView)
+        self.setupCompanyImageAnchors()
+    }
+    
+    private func setupCompanyImageAnchors() {
+        companyImageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        companyImageView.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
+        companyImageView.heightAnchor.constraint(equalToConstant: 100.0).isActive = true
+        companyImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
     private func setupNameLabel() {
@@ -99,7 +120,7 @@ class ManageCompanyLayout: UIViewController {
     }
     
     private func setupNameLabelAnchors() {
-        nameLabel.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        nameLabel.topAnchor.constraint(equalTo: companyImageView.bottomAnchor).isActive = true
         nameLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
         
         nameLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
