@@ -114,6 +114,7 @@ class ManageCompanyLayout: UIViewController, UIImagePickerControllerDelegate, UI
         print("works")
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
+        imagePickerController.allowsEditing = true
         present(imagePickerController, animated: true, completion: nil)
     }
     
@@ -123,7 +124,9 @@ class ManageCompanyLayout: UIViewController, UIImagePickerControllerDelegate, UI
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         print(info)
-        if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+        if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            companyImageView.image = editedImage
+        } else if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             companyImageView.image = originalImage
         }
         dismiss(animated: true, completion: nil)
