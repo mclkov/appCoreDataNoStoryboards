@@ -8,8 +8,8 @@
 
 import UIKit
 
-class SetNavigationBarTheme {
-    init() {
+extension AppDelegate {
+    func setNavigationBarTheme () {
         self.setupBackground()
         self.setupTitleStyles()
         self.setupButtonColor()

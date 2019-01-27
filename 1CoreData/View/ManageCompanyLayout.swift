@@ -22,7 +22,7 @@ class ManageCompanyLayout: UIViewController {
         return backgroundView
     }()
     
-    let companyImageView: UIImageView = {
+    lazy var companyImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "no_image")
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -103,8 +103,17 @@ class ManageCompanyLayout: UIViewController {
     }
     
     private func setupCompanyImage() {
+        companyImageView.isUserInteractionEnabled = true
+        companyImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.presentViewSelectPhoto)))
+        
         view.addSubview(companyImageView)
         self.setupCompanyImageAnchors()
+    }
+    
+    @objc func presentViewSelectPhoto() {
+        print("works")
+        let imagePickerController = UIImagePickerController()
+        present(imagePickerController, animated: true, completion: nil)
     }
     
     private func setupCompanyImageAnchors() {
