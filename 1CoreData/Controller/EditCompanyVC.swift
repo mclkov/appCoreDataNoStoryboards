@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class EditCompanyVC: CompanyFactoryLayout, CompanyFactoryLayoutDelegate {
+class EditCompanyVC: ManageCompanyLayout, ManageCompanyLayoutDelegate {
     var navigationBarActionFunctionsImplemented = true
     var company: Company?
     var delegate: CompanyDataDelegate?

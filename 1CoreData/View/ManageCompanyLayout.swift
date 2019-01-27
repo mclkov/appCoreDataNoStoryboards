@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol CompanyFactoryLayoutDelegate {
+protocol ManageCompanyLayoutDelegate {
     var navigationBarActionFunctionsImplemented: Bool { get }
     func dismissByCancelPressed()
     func saveButtonPressed()
 }
 
-class CompanyFactoryLayout: UIViewController {
+class ManageCompanyLayout: UIViewController {
     let backgroundView: UIView = {
         let backgroundView = UIView()
         backgroundView.backgroundColor = ColorScheme.lightBlue

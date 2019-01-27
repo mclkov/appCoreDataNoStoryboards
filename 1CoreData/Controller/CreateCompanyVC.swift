@@ -14,7 +14,7 @@ protocol CompanyDataDelegate {
     func didEditCompany(company: Company)
 }
 
-class CreateCompanyVC: CompanyFactoryLayout, CompanyFactoryLayoutDelegate {
+class CreateCompanyVC: ManageCompanyLayout, ManageCompanyLayoutDelegate {
     var navigationBarActionFunctionsImplemented = true
     var delegate: CompanyDataDelegate?
     
