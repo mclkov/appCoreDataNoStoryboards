@@ -26,6 +26,7 @@ class ManageCompanyLayout: UIViewController, UIImagePickerControllerDelegate, UI
         let imageView = UIImageView()
         imageView.image = UIImage(named: "no_image")
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
