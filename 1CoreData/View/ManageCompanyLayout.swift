@@ -26,7 +26,6 @@ class ManageCompanyLayout: UIViewController, UIImagePickerControllerDelegate, UI
         let imageView = UIImageView()
         imageView.image = UIImage(named: "no_image")
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
@@ -62,8 +61,10 @@ class ManageCompanyLayout: UIViewController, UIImagePickerControllerDelegate, UI
     func setupView() {
         self.setupLeftBarButtonItemAndAction()
         self.setupRightBarButtonItemAndAction()
+        
         self.setupBackgroundColor()
         self.setupBackgroundView()
+        
         self.setupCompanyImage()
         self.setupNameLabel()
         self.setupNameTextField()
@@ -108,10 +109,10 @@ class ManageCompanyLayout: UIViewController, UIImagePickerControllerDelegate, UI
         
         view.addSubview(companyImageView)
         self.setupCompanyImageAnchors()
+        self.setupCircularImageStyle()
     }
     
     @objc func presentViewSelectPhoto() {
-        print("works")
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         imagePickerController.allowsEditing = true
@@ -129,6 +130,7 @@ class ManageCompanyLayout: UIViewController, UIImagePickerControllerDelegate, UI
         } else if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             companyImageView.image = originalImage
         }
+        self.setupCircularImageStyle()
         dismiss(animated: true, completion: nil)
     }
     
@@ -137,6 +139,14 @@ class ManageCompanyLayout: UIViewController, UIImagePickerControllerDelegate, UI
         companyImageView.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
         companyImageView.heightAnchor.constraint(equalToConstant: 100.0).isActive = true
         companyImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    }
+    
+    private func setupCircularImageStyle() {
+        companyImageView.layoutIfNeeded()
+        companyImageView.layer.cornerRadius = companyImageView.frame.width / 2
+        companyImageView.clipsToBounds = true
+        companyImageView.layer.borderWidth = 2
+        companyImageView.layer.borderColor = ColorScheme.darkBlue.cgColor
     }
     
     private func setupNameLabel() {

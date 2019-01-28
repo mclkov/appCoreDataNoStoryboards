@@ -17,7 +17,6 @@ extension CompanyList {
     
     func setupTableViewStyles() {
         tableView.backgroundColor = ColorScheme.darkBlue
-//        tableView.separatorStyle = .none
         tableView.separatorColor = .white
     }
     
@@ -46,6 +45,10 @@ extension CompanyList {
         
         cell.textLabel?.text = cellInfo
         cell.textLabel?.textColor = .white
+        
+        if let imageData = company.imageData {
+            cell.imageView?.image = UIImage(data: imageData)
+        }
         
         return cell
     }
