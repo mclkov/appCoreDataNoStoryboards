@@ -28,8 +28,12 @@ class EditCompanyVC: ManageCompanyLayout, ManageCompanyLayoutDelegate {
         guard let company = self.company else { return }
         
         let context = CoreDataManager.shared.persistentContainer.viewContext
-        self.company?.name = name
-        self.company?.founded = datePicker.date
+        company.name = name
+        company.founded = datePicker.date
+        
+        if let imageData = companyImageView.image?.jpegData(compressionQuality: 0.8) {
+            company.imageData = imageData
+        }
         
         do {
             try context.save()

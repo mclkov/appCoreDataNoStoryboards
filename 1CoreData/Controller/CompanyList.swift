@@ -20,7 +20,6 @@ class CompanyList: UITableViewController, CompanyDataDelegate {
     }
     
     func didEditCompany(company: Company) {
-        print("reachable")
         let row = self.companies.index(of: company)
         let indexPath = IndexPath(row: row!, section: 0)
 

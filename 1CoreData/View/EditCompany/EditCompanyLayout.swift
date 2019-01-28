@@ -11,14 +11,19 @@ import UIKit
 extension EditCompanyVC {
     func setupLocalView() {
         self.setupNavigationItem(title: "Edit Company")
-        self.setupCompanyNameTextField()
+        self.showCurrentPropertiesInUI()
     }
     
-    func setupCompanyNameTextField() {
+    func showCurrentPropertiesInUI() {
         guard let name = self.company?.name else { return }
         guard let founded = self.company?.founded else { return }
         
         self.nameTextField.text = name
         self.datePicker.setDate(founded, animated: false)
+        
+        if let imageData = self.company?.imageData {
+            print("here")
+            self.companyImageView.image = UIImage(data: imageData)
+        }
     }
 }
