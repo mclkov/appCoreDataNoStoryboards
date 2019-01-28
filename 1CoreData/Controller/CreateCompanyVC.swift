@@ -43,9 +43,12 @@ class CreateCompanyVC: ManageCompanyLayout, ManageCompanyLayoutDelegate {
         companyManagedObject.setValue(name, forKey: "name")
         companyManagedObject.setValue(datePicker.date, forKey: "founded")
         
-        if let imageData = companyImageView.image?.jpegData(compressionQuality: 0.8) {
+        if let imageData = companyImageView.image?.pngData() {
             companyManagedObject.setValue(imageData, forKey: "imageData")
         }
+//        if let imageData = companyImageView.image?.jpegData(compressionQuality: 0.8) {
+//            companyManagedObject.setValue(imageData, forKey: "imageData")
+//        }
         
         do {
             try context.save()
