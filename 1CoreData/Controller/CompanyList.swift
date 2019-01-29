@@ -52,7 +52,7 @@ class CompanyList: UITableViewController, CompanyDataDelegate {
         
         do {
             try context.execute(batchDeleteRequest)
-            self.deleteCompaniesFromUI()
+            self.deleteCompaniesFromUIWithAnimation()
         } catch let deleteError {
             print("Failed to delete objects from CoreData:", deleteError)
         }
@@ -61,6 +61,16 @@ class CompanyList: UITableViewController, CompanyDataDelegate {
     private func deleteCompaniesFromUI() {
         companies.removeAll()
         tableView.reloadData()
+    }
+    
+    private func deleteCompaniesFromUIWithAnimation() {
+        var indexPathsToRemove = [IndexPath]()
+        for (index, _) in companies.enumerated() {
+            let indexPath = IndexPath(row: index, section: 0)
+            indexPathsToRemove.append(indexPath)
+        }
+        companies.removeAll()
+        tableView.deleteRows(at: indexPathsToRemove, with: .left)
     }
     
     @objc func addCompanyPressed() {
