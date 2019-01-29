@@ -16,6 +16,7 @@ extension CompanyList {
     func setupNavigationItem() {
         self.setupNavigationTitle("Test")
         self.setupRightBarButtonItemAndAction()
+        self.setupLeftBarButtonItemAndAction()
         self.setupColorOfRightBarButton()
     }
 
@@ -25,6 +26,10 @@ extension CompanyList {
     
     func setupRightBarButtonItemAndAction() {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(self.addCompanyPressed))
+    }
+    
+    func setupLeftBarButtonItemAndAction() {
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Reset table", style: .plain, target: self, action: #selector(self.resetPressed))
     }
     
     func setupColorOfRightBarButton() {

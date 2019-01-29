@@ -42,6 +42,27 @@ class CompanyList: UITableViewController, CompanyDataDelegate {
         return companies.count
     }
     
+    @objc func resetPressed() {
+        self.deleteCompaniesFromCoreDataAndUI()
+    }
+    
+    private func deleteCompaniesFromCoreDataAndUI() {
+        let context = CoreDataManager.shared.persistentContainer.viewContext
+        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: Company.fetchRequest())
+        
+        do {
+            try context.execute(batchDeleteRequest)
+            self.deleteCompaniesFromUI()
+        } catch let deleteError {
+            print("Failed to delete objects from CoreData:", deleteError)
+        }
+    }
+    
+    private func deleteCompaniesFromUI() {
+        companies.removeAll()
+        tableView.reloadData()
+    }
+    
     @objc func addCompanyPressed() {
         self.presentViewCreateCompany()
     }
@@ -109,6 +130,21 @@ class CompanyList: UITableViewController, CompanyDataDelegate {
         let navigationController = CustomNavigationController(rootViewController: editCompanyController)
     
         present(navigationController, animated: true, completion: nil)
+    }
+    
+    func setTableFooterHeight() -> CGFloat {
+        if self.showTableFooterIfCompanyListIsEmpty() {
+            return HomeConstants.footerHeight
+        } else {
+            return 0.0
+        }
+    }
+    
+    private func showTableFooterIfCompanyListIsEmpty() -> Bool {
+        if companies.count == 0 {
+            return true
+        }
+        return false
     }
 }
 
