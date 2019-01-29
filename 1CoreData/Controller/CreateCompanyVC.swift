@@ -9,11 +9,6 @@
 import UIKit
 import CoreData
 
-protocol CompanyDataDelegate {
-    func didAddCompany(company: Company)
-    func didEditCompany(company: Company)
-}
-
 class CreateCompanyVC: ManageCompanyLayout, ManageCompanyLayoutDelegate {
     var navigationBarActionFunctionsImplemented = true
     var delegate: CompanyDataDelegate?
@@ -46,9 +41,6 @@ class CreateCompanyVC: ManageCompanyLayout, ManageCompanyLayoutDelegate {
         if let imageData = companyImageView.image?.pngData() {
             companyManagedObject.setValue(imageData, forKey: "imageData")
         }
-//        if let imageData = companyImageView.image?.jpegData(compressionQuality: 0.8) {
-//            companyManagedObject.setValue(imageData, forKey: "imageData")
-//        }
         
         do {
             try context.save()

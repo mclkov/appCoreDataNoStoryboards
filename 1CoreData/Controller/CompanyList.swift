@@ -9,6 +9,11 @@
 import UIKit
 import CoreData
 
+protocol CompanyDataDelegate {
+    func didAddCompany(company: Company)
+    func didEditCompany(company: Company)
+}
+
 class CompanyList: UITableViewController, CompanyDataDelegate {
     var companies = [Company]()
     override func viewDidLoad() {

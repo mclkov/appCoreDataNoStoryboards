@@ -24,13 +24,17 @@ class EditCompanyVC: ManageCompanyLayout, ManageCompanyLayoutDelegate {
     }
     
     @objc override func saveButtonPressed() {
+        self.saveCompanyAndUpdateTableView()
+    }
+    
+    func saveCompanyAndUpdateTableView() {
         guard let name = nameTextField.text else { return }
         guard let company = self.company else { return }
         
         let context = CoreDataManager.shared.persistentContainer.viewContext
         company.name = name
         company.founded = datePicker.date
-
+        
         if let imageData = companyImageView.image?.pngData() {
             company.imageData = imageData
         }
