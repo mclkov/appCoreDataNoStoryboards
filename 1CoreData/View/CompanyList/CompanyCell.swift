@@ -9,7 +9,7 @@
 import UIKit
 
 class CompanyCell: UITableViewCell {
-    @IBOutlet weak var companyImage: UIImageView! = {
+    let companyImage: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: HomeConstants.noImageFile))
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -25,6 +25,23 @@ class CompanyCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.setupView()
+    }
+    
+    func setupView() {
+        self.setupCompanyImage()
+    }
+    
+    func setupCompanyImage() {
+        addSubview(companyImage)
+        self.setupCompanyImageAnchors()
+    }
+    
+    func setupCompanyImageAnchors() {
+        companyImage.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        companyImage.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        companyImage.leftAnchor.constraint(equalTo: leftAnchor, constant: 16).isActive = true
+        companyImage.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
     }
     
     required init?(coder aDecoder: NSCoder) {
