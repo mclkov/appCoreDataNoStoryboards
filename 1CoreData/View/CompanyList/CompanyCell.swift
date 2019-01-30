@@ -12,6 +12,10 @@ class CompanyCell: UITableViewCell {
     let companyImage: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: HomeConstants.noImageFile))
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.layer.cornerRadius = 20
+        imageView.clipsToBounds = true
+        imageView.layer.borderWidth = 1
+        imageView.layer.borderColor = ColorScheme.darkBlue.cgColor
         return imageView
     }()
     
@@ -74,7 +78,6 @@ class CompanyCell: UITableViewCell {
         }else{
             companyInfo = company.name ?? ""
         }
-        
         details.text = companyInfo
         
         if let imageData = company.imageData {
