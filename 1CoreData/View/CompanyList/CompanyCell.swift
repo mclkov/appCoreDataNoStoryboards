@@ -83,7 +83,6 @@ class CompanyCell: UITableViewCell {
         if let imageData = company.imageData {
             companyImage.image = UIImage(data: imageData)
         }
-
     }
     
     func companyFoundedDateToString(date: Date) -> String {

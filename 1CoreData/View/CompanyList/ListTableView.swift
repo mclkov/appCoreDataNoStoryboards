@@ -33,27 +33,6 @@ extension CompanyList {
         let company = self.companies[indexPath.row]
         
         cell.configureCell(company: company)
-        
-        
-//        let company = self.companies[indexPath.row]
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "MMM dd, yyyy"
-//
-//        var cellInfo = ""
-//        if let name = company.name, let founded = company.founded {
-//            let foundedDateString = dateFormatter.string(from: founded)
-//            cellInfo = "\(name), founded: \(foundedDateString)"
-//        }else{
-//            cellInfo = company.name ?? ""
-//        }
-//
-//        cell.textLabel?.text = cellInfo
-//        cell.textLabel?.textColor = .white
-//
-//        if let imageData = company.imageData {
-//            cell.imageView?.image = UIImage(data: imageData)
-//        }
-        
         return cell
     }
     
