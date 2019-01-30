@@ -25,7 +25,7 @@ extension CompanyList {
     }
     
     func registerCellReuseId() {
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: HomeConstants.cellReuseId)
+        self.tableView.register(CompanyCell.self, forCellReuseIdentifier: HomeConstants.cellReuseId)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

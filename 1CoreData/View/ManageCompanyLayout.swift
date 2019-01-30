@@ -24,7 +24,7 @@ class ManageCompanyLayout: UIViewController, UIImagePickerControllerDelegate, UI
     
     lazy var companyImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "no_image")
+        imageView.image = UIImage(named: HomeConstants.noImageFile)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         return imageView

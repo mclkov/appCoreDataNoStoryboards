@@ -9,12 +9,26 @@
 import UIKit
 
 class CompanyCell: UITableViewCell {
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var founded: UILabel!
+    @IBOutlet weak var companyImage: UIImageView! = {
+        let imageView = UIImageView(image: UIImage(named: HomeConstants.noImageFile))
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var name: UILabel! = {
+       return UILabel()
+    }()
+    
+    @IBOutlet weak var founded: UILabel! = {
+        return UILabel()
+    }()
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     func configureCell(company: Company) {
