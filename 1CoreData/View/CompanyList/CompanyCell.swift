@@ -67,9 +67,25 @@ class CompanyCell: UITableViewCell {
     }
     
     func configureCell(company: Company) {
-//        self.backgroundColor = ColorScheme.teal
-//        self.name.text = company.name ?? ""
+        var companyInfo = ""
+        if let name = company.name, let founded = company.founded {
+            let foundedDateString = self.companyFoundedDateToString(date: founded)
+            companyInfo = "\(name), founded: \(foundedDateString)"
+        }else{
+            companyInfo = company.name ?? ""
+        }
         
-//        self.founded.text = company.founded ?? ""
+        details.text = companyInfo
+        
+        if let imageData = company.imageData {
+            companyImage.image = UIImage(data: imageData)
+        }
+
+    }
+    
+    func companyFoundedDateToString(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM dd, yyyy"
+        return dateFormatter.string(from: date)
     }
 }

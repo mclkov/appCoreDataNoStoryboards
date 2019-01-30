@@ -29,8 +29,10 @@ extension CompanyList {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let emptyCell = tableView.dequeueReusableCell(withIdentifier: HomeConstants.cellReuseId, for: indexPath)
-        let cell = emptyCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: HomeConstants.cellReuseId, for: indexPath) as! CompanyCell
+        let company = self.companies[indexPath.row]
+        
+        cell.configureCell(company: company)
         
         
 //        let company = self.companies[indexPath.row]
