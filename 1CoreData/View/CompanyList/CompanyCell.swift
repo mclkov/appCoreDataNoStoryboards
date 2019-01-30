@@ -15,12 +15,12 @@ class CompanyCell: UITableViewCell {
         return imageView
     }()
     
-    @IBOutlet weak var name: UILabel! = {
-       return UILabel()
-    }()
-    
-    @IBOutlet weak var founded: UILabel! = {
-        return UILabel()
+    let details: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "test data"
+        label.textColor = .white
+        return label
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -29,19 +29,37 @@ class CompanyCell: UITableViewCell {
     }
     
     func setupView() {
+        self.setupBackgroundColor()
         self.setupCompanyImage()
+        self.setupNameAndFounded()
     }
     
-    func setupCompanyImage() {
+    private func setupBackgroundColor() {
+        backgroundColor = ColorScheme.teal
+    }
+    
+    private func setupCompanyImage() {
         addSubview(companyImage)
         self.setupCompanyImageAnchors()
     }
     
-    func setupCompanyImageAnchors() {
+    private func setupCompanyImageAnchors() {
         companyImage.heightAnchor.constraint(equalToConstant: 40).isActive = true
         companyImage.widthAnchor.constraint(equalToConstant: 40).isActive = true
         companyImage.leftAnchor.constraint(equalTo: leftAnchor, constant: 16).isActive = true
         companyImage.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+    }
+    
+    private func setupNameAndFounded() {
+        addSubview(details)
+        self.setupNameAndFoundedAnchors()
+    }
+    
+    private func setupNameAndFoundedAnchors() {
+        details.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        details.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        details.leftAnchor.constraint(equalTo: companyImage.rightAnchor, constant: 8).isActive = true
+        details.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -49,8 +67,8 @@ class CompanyCell: UITableViewCell {
     }
     
     func configureCell(company: Company) {
-        self.backgroundColor = ColorScheme.teal
-        self.name.text = company.name ?? ""
+//        self.backgroundColor = ColorScheme.teal
+//        self.name.text = company.name ?? ""
         
 //        self.founded.text = company.founded ?? ""
     }

@@ -30,35 +30,28 @@ extension CompanyList {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let emptyCell = tableView.dequeueReusableCell(withIdentifier: HomeConstants.cellReuseId, for: indexPath)
-        let cell = configureCell(emptyCell)
-        let company = self.companies[indexPath.row]
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM dd, yyyy"
+        let cell = emptyCell
         
-        var cellInfo = ""
-        if let name = company.name, let founded = company.founded {
-            let foundedDateString = dateFormatter.string(from: founded)
-            cellInfo = "\(name), founded: \(foundedDateString)"
-        }else{
-            cellInfo = company.name ?? ""
-        }
         
-        cell.textLabel?.text = cellInfo
-        cell.textLabel?.textColor = .white
+//        let company = self.companies[indexPath.row]
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "MMM dd, yyyy"
+//
+//        var cellInfo = ""
+//        if let name = company.name, let founded = company.founded {
+//            let foundedDateString = dateFormatter.string(from: founded)
+//            cellInfo = "\(name), founded: \(foundedDateString)"
+//        }else{
+//            cellInfo = company.name ?? ""
+//        }
+//
+//        cell.textLabel?.text = cellInfo
+//        cell.textLabel?.textColor = .white
+//
+//        if let imageData = company.imageData {
+//            cell.imageView?.image = UIImage(data: imageData)
+//        }
         
-        if let imageData = company.imageData {
-            cell.imageView?.image = UIImage(data: imageData)
-        }
-        
-        return cell
-    }
-    
-    func configureCell(_ cell: UITableViewCell) -> UITableViewCell {
-        return self.setupStylesOfCell(cell)
-    }
-    
-    func setupStylesOfCell(_ cell: UITableViewCell) -> UITableViewCell {
-        cell.backgroundColor = ColorScheme.teal
         return cell
     }
     
@@ -75,10 +68,6 @@ extension CompanyList {
         view.backgroundColor = ColorScheme.lightBlue
         
         return view
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return HomeConstants.heightOfCell
     }
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
@@ -103,6 +92,14 @@ extension CompanyList {
         label.font = UIFont.boldSystemFont(ofSize: 16)
         
         return label
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return HomeConstants.headerHeight
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return HomeConstants.cellHeight
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
