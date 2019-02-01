@@ -45,4 +45,15 @@ struct CoreDataManager {
             print("Failed to delete objects from CoreData:", deleteError)
         }
     }
+    
+    func removeCompany(_ company: Company) {
+        let context = persistentContainer.viewContext
+        context.delete(company)
+        
+        do {
+            try context.save()
+        } catch let saveError {
+            print("Failed to delete company", saveError)
+        }
+    }
 }

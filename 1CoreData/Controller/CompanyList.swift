@@ -74,20 +74,9 @@ class CompanyList: UITableViewController {
     }
     
     func removeCompanyBy(indexPath: IndexPath) {
-        self.removeCompanyFromCoreDataAndUI(indexPath);
-    }
-    
-    private func removeCompanyFromCoreDataAndUI(_ indexPath: IndexPath) {
-        let context = CoreDataManager.shared.persistentContainer.viewContext
         let company = self.companies[indexPath.row]
-        context.delete(company)
-        
-        do {
-            try context.save()
-            self.removeCompanyFromUI(indexPath)
-        } catch let saveError {
-            print("Failed to delete company", saveError)
-        }
+        CoreDataManager.shared.removeCompany(company)
+        self.removeCompanyFromUI(indexPath)
     }
     
     private func removeCompanyFromUI(_ indexPath: IndexPath) {
