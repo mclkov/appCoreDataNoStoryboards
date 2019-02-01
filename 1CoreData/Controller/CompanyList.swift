@@ -73,21 +73,8 @@ class CompanyList: UITableViewController {
         present(navigationController, animated: true, completion: nil)
     }
     
-    func fetchCompanies() {
-        let context = CoreDataManager.shared.persistentContainer.viewContext
-        // let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Company") // the next line does the same, but is more specific "<Company>"
-        let fetchRequest = NSFetchRequest<Company>(entityName: "Company")
-        
-        do {
-            let resultFetch = try context.fetch(fetchRequest)            
-            self.updateCompanyList(companiesArray: resultFetch)
-        } catch let fetchError {
-            print("Failed to fetch companies:", fetchError)
-        }
-    }
-    
-    private func updateCompanyList(companiesArray: [Company]) {
-        self.companies = companiesArray
+    private func fetchCompanies() {
+        self.companies = CoreDataManager.shared.fetchCompanies()
         self.tableView.reloadData()
     }
     
