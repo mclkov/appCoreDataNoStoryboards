@@ -14,7 +14,7 @@ protocol CompanyDataDelegate {
     func didEditCompany(company: Company)
 }
 
-class CompanyList: UITableViewController, CompanyDataDelegate {
+class CompanyList: UITableViewController {
     var companies = [Company]()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,20 +22,6 @@ class CompanyList: UITableViewController, CompanyDataDelegate {
         self.fetchCompanies()
         self.setupView()
         self.setupTableView()
-    }
-    
-    func didEditCompany(company: Company) {
-        let row = self.companies.index(of: company)
-        let indexPath = IndexPath(row: row!, section: 0)
-
-        tableView.reloadRows(at: [indexPath], with: .middle)
-    }
-    
-    func didAddCompany(company: Company) {
-        self.companies.append(company)
-        let nextIndexValue = companies.count - 1
-        let newIndexPath = IndexPath(row: nextIndexValue, section: 0)
-        tableView.insertRows(at: [newIndexPath], with: .automatic)
     }
     
     func amountOfRowsForTableView() -> Int {
