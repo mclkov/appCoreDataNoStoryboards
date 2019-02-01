@@ -29,19 +29,8 @@ class CompanyList: UITableViewController {
     }
     
     @objc func resetPressed() {
-        self.deleteCompaniesFromCoreDataAndUI()
-    }
-    
-    private func deleteCompaniesFromCoreDataAndUI() {
-        let context = CoreDataManager.shared.persistentContainer.viewContext
-        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: Company.fetchRequest())
-        
-        do {
-            try context.execute(batchDeleteRequest)
-            self.deleteCompaniesFromUIWithAnimation()
-        } catch let deleteError {
-            print("Failed to delete objects from CoreData:", deleteError)
-        }
+        CoreDataManager.shared.resetCompanies()
+        self.deleteCompaniesFromUIWithAnimation()
     }
     
     private func deleteCompaniesFromUI() {
@@ -50,13 +39,19 @@ class CompanyList: UITableViewController {
     }
     
     private func deleteCompaniesFromUIWithAnimation() {
-        var indexPathsToRemove = [IndexPath]()
-        for (index, _) in companies.enumerated() {
-            let indexPath = IndexPath(row: index, section: 0)
-            indexPathsToRemove.append(indexPath)
-        }
+        let indexPathsToRemove = self.getIndexPathsArray()
         companies.removeAll()
         tableView.deleteRows(at: indexPathsToRemove, with: .left)
+    }
+    
+    func getIndexPathsArray() -> [IndexPath] {
+        var resultIndexPaths = [IndexPath]()
+        for (index, _) in companies.enumerated() {
+            let indexPath = IndexPath(row: index, section: 0)
+            resultIndexPaths.append(indexPath)
+        }
+        
+        return resultIndexPaths
     }
     
     @objc func addCompanyPressed() {

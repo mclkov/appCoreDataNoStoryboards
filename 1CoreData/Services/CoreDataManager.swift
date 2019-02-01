@@ -22,7 +22,7 @@ struct CoreDataManager {
     }()
     
     func fetchCompanies() -> [Company] {
-        let context = CoreDataManager.shared.persistentContainer.viewContext
+        let context = persistentContainer.viewContext
         // let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Company") // the next line does the same, but is more specific "<Company>"
         let fetchRequest = NSFetchRequest<Company>(entityName: "Company")
         
@@ -32,6 +32,17 @@ struct CoreDataManager {
         } catch let fetchError {
             print("Failed to fetch companies:", fetchError)
             return []
+        }
+    }
+    
+    func resetCompanies() {
+        let context = persistentContainer.viewContext
+        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: Company.fetchRequest())
+        
+        do {
+            try context.execute(batchDeleteRequest)
+        } catch let deleteError {
+            print("Failed to delete objects from CoreData:", deleteError)
         }
     }
 }
