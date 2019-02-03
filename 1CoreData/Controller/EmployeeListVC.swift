@@ -17,10 +17,14 @@ class EmployeeListVC: UITableViewController {
         super.viewDidLoad()
         tableView.backgroundColor = ColorScheme.darkBlue
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(self.addEmployeePressed))
+        self.setupRightButtonInNavigationBar(selector: #selector(self.addEmployeePressed))
     }
     
     @objc func addEmployeePressed() {
         print("Add employee")
+        let createEmployeeController = CreateEmployeeVC()
+        let navigationController = CustomNavigationController(rootViewController: createEmployeeController)
+        
+        present(navigationController, animated: true, completion: nil)
     }
 }
