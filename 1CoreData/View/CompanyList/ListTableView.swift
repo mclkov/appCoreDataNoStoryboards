@@ -88,6 +88,7 @@ extension CompanyListVC {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.presentViewEmployeeList()
+        let company = companies[indexPath.row]
+        self.presentViewEmployeeList(company: company)
     }
 }
