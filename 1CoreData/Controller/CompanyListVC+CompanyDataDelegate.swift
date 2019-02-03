@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension CompanyList: CompanyDataDelegate  {
+extension CompanyListVC: CompanyDataDelegate  {
     func didEditCompany(company: Company) {
         let row = self.companies.index(of: company)
         let indexPath = IndexPath(row: row!, section: 0)

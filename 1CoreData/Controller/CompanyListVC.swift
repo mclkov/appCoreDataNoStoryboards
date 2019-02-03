@@ -14,7 +14,7 @@ protocol CompanyDataDelegate {
     func didEditCompany(company: Company)
 }
 
-class CompanyList: UITableViewController {
+class CompanyListVC: UITableViewController {
     var companies = [Company]()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -112,6 +112,10 @@ class CompanyList: UITableViewController {
             return true
         }
         return false
+    }
+    
+    func presentViewEmployeeList() {
+
     }
 }
 

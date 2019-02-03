@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension CompanyList {
+extension CompanyListVC {
     func setupTableView() {
         self.setupTableViewStyles()
         self.fillFooterEmptySpace()
@@ -85,5 +85,9 @@ extension CompanyList {
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return self.setTableFooterHeight()
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.presentViewEmployeeList()
     }
 }

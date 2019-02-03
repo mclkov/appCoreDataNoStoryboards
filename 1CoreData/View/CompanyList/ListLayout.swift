@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension CompanyList {
+extension CompanyListVC {
     func setupView() {
         self.setupNavigationItem()
     }
