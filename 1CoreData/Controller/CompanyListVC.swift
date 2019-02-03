@@ -115,7 +115,8 @@ class CompanyListVC: UITableViewController {
     }
     
     func presentViewEmployeeList() {
-
+        let employeeController = EmployeeListVC()
+        navigationController?.pushViewController(employeeController, animated: true)
     }
 }
 

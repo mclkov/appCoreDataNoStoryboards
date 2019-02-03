@@ -6,4 +6,11 @@
 //  Copyright © 2019 McL. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class EmployeeListVC: UITableViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.backgroundColor = ColorScheme.darkBlue
+    }
+}
