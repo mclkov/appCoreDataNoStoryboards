@@ -6,7 +6,12 @@
 //  Copyright © 2019 McL. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+protocol CompanyDataDelegate {
+    func didAddCompany(company: Company)
+    func didEditCompany(company: Company)
+}
 
 extension CompanyListVC: CompanyDataDelegate  {
     func didEditCompany(company: Company) {

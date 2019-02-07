@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class EditCompanyVC: ManageCompanyLayout, ManageCompanyLayoutDelegate {
+class EditCompanyVC: ManageCompanyLayout {
     var navigationBarActionFunctionsImplemented = true
     var company: Company?
     var delegate: CompanyDataDelegate?
@@ -19,11 +19,11 @@ class EditCompanyVC: ManageCompanyLayout, ManageCompanyLayoutDelegate {
         self.setupLocalView()
     }
     
-    @objc override func dismissByCancelPressed() {
+    @objc func dismissByCancelPressed() {
         dismiss(animated: true, completion: nil)
     }
     
-    @objc override func saveButtonPressed() {
+    @objc func saveButtonPressed() {
         self.saveCompanyAndUpdateTableView()
     }
     

@@ -8,12 +8,6 @@
 
 import UIKit
 
-protocol ManageCompanyLayoutDelegate {
-    var navigationBarActionFunctionsImplemented: Bool { get }
-    func dismissByCancelPressed()
-    func saveButtonPressed()
-}
-
 class ManageCompanyLayout: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     let backgroundView: UIView = {
         let backgroundView = UIView()
@@ -55,13 +49,9 @@ class ManageCompanyLayout: UIViewController, UIImagePickerControllerDelegate, UI
         self.setupView()
     }
     
-    func setupNavigationItem(title: String) {
-        self.navigationItem.title = title
-    }
-    
     func setupView() {
-        self.setupLeftBarButtonItemAndAction()
-        self.setupRightBarButtonItemAndAction()
+//        self.setupLeftBarButtonItemAndAction()
+//        self.setupRightBarButtonItemAndAction()
         
         self.setupBackgroundColor()
         self.setupBackgroundView()
@@ -70,22 +60,6 @@ class ManageCompanyLayout: UIViewController, UIImagePickerControllerDelegate, UI
         self.setupNameLabel()
         self.setupNameTextField()
         self.setupDataPicker()
-    }
-    
-    private func setupLeftBarButtonItemAndAction() {
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancle", style: .plain, target: self, action: #selector(self.dismissByCancelPressed))
-    }
-    
-    @objc func dismissByCancelPressed() {
-        //
-    }
-    
-    private func setupRightBarButtonItemAndAction() {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(self.saveButtonPressed))
-    }
-    
-    @objc func saveButtonPressed() {
-        //
     }
     
     private func setupBackgroundColor() {

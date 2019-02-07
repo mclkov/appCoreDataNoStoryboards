@@ -15,21 +15,12 @@ extension CompanyListVC {
     
     func setupNavigationItem() {
         self.setupNavigationTitle("Test")
-        self.setupRightBarButtonItemAndAction()
-        self.setupLeftBarButtonItemAndAction()
-        self.setupColorOfRightBarButton()
+        self.setupRightButtonInNavigationBar(title: "Add", selector: #selector(self.addCompanyPressed))
+        self.setupRightButtonInNavigationBar(title: "Reset table", selector: #selector(self.resetPressed))
     }
 
     func setupNavigationTitle(_ title: String) {
         self.navigationItem.title = title
-    }
-    
-    func setupRightBarButtonItemAndAction() {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(self.addCompanyPressed))
-    }
-    
-    func setupLeftBarButtonItemAndAction() {
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Reset table", style: .plain, target: self, action: #selector(self.resetPressed))
     }
     
     func setupColorOfRightBarButton() {

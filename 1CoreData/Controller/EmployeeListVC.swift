@@ -17,7 +17,7 @@ class EmployeeListVC: UITableViewController {
         super.viewDidLoad()
         tableView.backgroundColor = ColorScheme.darkBlue
         
-        self.setupRightButtonInNavigationBar(selector: #selector(self.addEmployeePressed))
+        self.setupRightButtonInNavigationBar(title: "Add", selector: #selector(self.addEmployeePressed))
     }
     
     @objc func addEmployeePressed() {

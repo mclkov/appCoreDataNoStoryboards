@@ -22,7 +22,6 @@ extension EditCompanyVC {
         self.datePicker.setDate(founded, animated: false)
         
         if let imageData = self.company?.imageData {
-            print("here")
             self.companyImageView.image = UIImage(data: imageData)
         }
     }
