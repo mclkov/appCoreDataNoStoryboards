@@ -13,6 +13,8 @@ extension CreateEmployeeVC {
         self.setupNavigationItem()
         self.setupBackgroundColor()
         self.setupBackgroundView()
+        self.setupNameLabel()
+        self.setupNameTextField()
     }
     
     func setupNavigationItem() {
@@ -34,5 +36,30 @@ extension CreateEmployeeVC {
         backgroundView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         backgroundView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         backgroundView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    }
+    
+    private func setupNameLabel() {
+        view.addSubview(nameLabel)
+        self.setupNameLabelAnchors()
+    }
+    
+    private func setupNameLabelAnchors() {
+        nameLabel.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        nameLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
+        
+        nameLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        nameLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    }
+    
+    private func setupNameTextField() {
+        view.addSubview(nameTextField)
+        self.setupNameTextFieldAnchors()
+    }
+    
+    private func setupNameTextFieldAnchors() {
+        nameTextField.topAnchor.constraint(equalTo: nameLabel.topAnchor).isActive = true
+        nameTextField.leftAnchor.constraint(equalTo: nameLabel.rightAnchor).isActive = true
+        nameTextField.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        nameTextField.bottomAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
     }
 }

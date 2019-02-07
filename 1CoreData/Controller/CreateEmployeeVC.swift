@@ -16,6 +16,20 @@ class CreateEmployeeVC: UIViewController {
         return backgroundView
     }()
     
+    let nameLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Name"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let nameTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Enter name"
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
