@@ -41,6 +41,18 @@ class CreateEmployeeVC: UIViewController {
     }
     
     @objc func saveButtonPressed() {
-//        self.saveCompanyAndUpdateTableView()
+        self.saveEmployeeAndUpdateTableView()
+    }
+    
+    func saveEmployeeAndUpdateTableView() {
+        guard let employeeName = nameTextField.text else { return }
+        let error = CoreDataManager.shared.createEmployee(employeeName: employeeName)
+        
+        if let error = error {
+            //TODO: present error
+            print(error)
+        } else {
+            dismiss(animated: true, completion: nil)
+        }
     }
 }
