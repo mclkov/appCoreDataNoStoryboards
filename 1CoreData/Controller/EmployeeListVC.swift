@@ -21,7 +21,6 @@ class EmployeeListVC: UITableViewController {
     }
     
     @objc func addEmployeePressed() {
-        print("Add employee")
         let createEmployeeController = CreateEmployeeVC()
         let navigationController = CustomNavigationController(rootViewController: createEmployeeController)
         

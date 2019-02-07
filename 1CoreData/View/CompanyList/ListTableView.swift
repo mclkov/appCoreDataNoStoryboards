@@ -47,7 +47,7 @@ extension CompanyListVC {
     func addExtraCellToBeginning() -> UIView {
         let view = UIView()
         view.backgroundColor = ColorScheme.lightBlue
-        
+
         return view
     }
     

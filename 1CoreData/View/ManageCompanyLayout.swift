@@ -50,9 +50,6 @@ class ManageCompanyLayout: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     func setupView() {
-//        self.setupLeftBarButtonItemAndAction()
-//        self.setupRightBarButtonItemAndAction()
-        
         self.setupBackgroundColor()
         self.setupBackgroundView()
         

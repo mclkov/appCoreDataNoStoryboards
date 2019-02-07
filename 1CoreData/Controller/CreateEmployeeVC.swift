@@ -9,9 +9,16 @@
 import UIKit
 
 class CreateEmployeeVC: UIViewController {
+    let backgroundView: UIView = {
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = ColorScheme.lightBlue
+        backgroundView.translatesAutoresizingMaskIntoConstraints = false
+        return backgroundView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .gray
+        self.setupView()
     }
 }
