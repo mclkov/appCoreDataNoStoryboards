@@ -20,6 +20,7 @@ extension CreateEmployeeVC {
     func setupNavigationItem() {
         self.setupNavigationTitle("Create Employee")
         self.setupLeftButtonInNavigationBar(title: "Cancel", selector: #selector(self.dismissByCancelPressed))
+        self.setupRightButtonInNavigationBar(title: "Save", selector: #selector(self.saveButtonPressed))
     }
     
     func setupBackgroundColor() {

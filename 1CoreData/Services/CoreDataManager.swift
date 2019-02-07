@@ -56,4 +56,16 @@ struct CoreDataManager {
             print("Failed to delete company", saveError)
         }
     }
+    
+    func createEmployee(employeeName: String) {
+        let context = persistentContainer.viewContext
+        let employee = NSEntityDescription.insertNewObject(forEntityName: "Employee", into: context)
+        employee.setValue(employeeName, forKey: "name")
+        
+        do {
+            try context.save()
+        } catch let saveError {
+            print("Failed to create employee", saveError)
+        }
+    }
 }
