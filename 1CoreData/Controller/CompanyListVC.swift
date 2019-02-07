@@ -56,7 +56,7 @@ class CompanyListVC: UITableViewController {
     private func presentViewCreateCompany() {
         let createCompanyController = CreateCompanyVC()
         createCompanyController.delegate = self // to pass the function didAddCompany
-        createCompanyController.setupNavigationItem(title: "Create Company")
+        createCompanyController.setupNavigationTitle("Create Company")
         
         let navigationController = CustomNavigationController(rootViewController: createCompanyController)
         

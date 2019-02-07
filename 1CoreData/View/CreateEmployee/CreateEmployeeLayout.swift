@@ -10,8 +10,14 @@ import UIKit
 
 extension CreateEmployeeVC {
     func setupView() {
+        self.setupNavigationItem()
         self.setupBackgroundColor()
         self.setupBackgroundView()
+    }
+    
+    func setupNavigationItem() {
+        self.setupNavigationTitle("Create Employee")
+        self.setupLeftButtonInNavigationBar(title: "Cancel", selector: #selector(self.dismissByCancelPressed))
     }
     
     func setupBackgroundColor() {

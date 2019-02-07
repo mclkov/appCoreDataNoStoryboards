@@ -21,4 +21,8 @@ class CreateEmployeeVC: UIViewController {
         
         self.setupView()
     }
+    
+    @objc func dismissByCancelPressed() {
+        dismiss(animated: true, completion: nil)
+    }
 }
