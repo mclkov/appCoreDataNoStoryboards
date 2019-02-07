@@ -11,6 +11,8 @@ import UIKit
 extension EditCompanyVC {
     func setupLocalView() {
         self.setupNavigationItem(title: "Edit Company")
+        self.setupRightButtonInNavigationBar(title: "Save", selector: #selector(self.saveButtonPressed))
+        self.setupLeftButtonInNavigationBar(title: "Cancel", selector: #selector(self.dismissByCancelPressed))
         self.showCurrentPropertiesInUI()
     }
     

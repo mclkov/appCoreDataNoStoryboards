@@ -79,8 +79,7 @@ class CompanyListVC: UITableViewController {
         self.tableView.deleteRows(at: [indexPath], with: .automatic)
     }
     
-    func editCompanyBy(indexPath: IndexPath) {
-        let company = companies[indexPath.row]
+    func editCompany(_ company: Company) {
         self.presentViewEditCompany(company)
     }
     

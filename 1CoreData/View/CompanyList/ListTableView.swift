@@ -58,7 +58,8 @@ extension CompanyListVC {
         deleteAction.backgroundColor = ColorScheme.lightRed
         
         let editAction = UITableViewRowAction(style: .normal, title: "Edit") { (action, indexPath) in
-            self.editCompanyBy(indexPath: indexPath)
+            let company = self.companies[indexPath.row]
+            self.editCompany(company)
         }
         editAction.backgroundColor = ColorScheme.darkBlue
         

@@ -16,7 +16,7 @@ extension CompanyListVC {
     func setupNavigationItem() {
         self.setupNavigationTitle("Test")
         self.setupRightButtonInNavigationBar(title: "Add", selector: #selector(self.addCompanyPressed))
-        self.setupRightButtonInNavigationBar(title: "Reset table", selector: #selector(self.resetPressed))
+        self.setupLeftButtonInNavigationBar(title: "Reset table", selector: #selector(self.resetPressed))
     }
 
     func setupNavigationTitle(_ title: String) {
