@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 
 class EmployeeListVC: UITableViewController {
+    var employees = [Employee]()
     func setTitle(company: Company) {
         self.navigationItem.title = company.name
     }
@@ -19,7 +20,9 @@ class EmployeeListVC: UITableViewController {
         tableView.backgroundColor = ColorScheme.darkBlue
         
         self.setupRightButtonInNavigationBar(title: "Add", selector: #selector(self.addEmployeePressed))
-        fetchEmployees()
+        
+        self.setupTableView()
+        self.fetchEmployees()
     }
     
     @objc func addEmployeePressed() {
@@ -34,12 +37,14 @@ class EmployeeListVC: UITableViewController {
         let request = NSFetchRequest<Employee>(entityName: "Employee")
         
         do {
-            let employees = try context.fetch(request)
-            employees.forEach {
-                print("Employee name:", $0.name ?? "")
-            }
+            let employees = try context.fetch(request)            
+            self.employees = employees
         } catch let error {
             print("Failed to fetch employees:", error)
         }
+    }
+    
+    func amountOfRowsForTableView() -> Int {
+        return employees.count
     }
 }
