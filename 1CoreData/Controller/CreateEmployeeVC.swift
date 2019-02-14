@@ -9,6 +9,8 @@
 import UIKit
 
 class CreateEmployeeVC: UIViewController {
+    var delegate: EmployeeDataDelegate?
+    
     let backgroundView: UIView = {
         let backgroundView = UIView()
         backgroundView.backgroundColor = ColorScheme.lightBlue

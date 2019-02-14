@@ -28,7 +28,7 @@ class EmployeeListVC: UITableViewController {
     @objc func addEmployeePressed() {
         let createEmployeeController = CreateEmployeeVC()
         let navigationController = CustomNavigationController(rootViewController: createEmployeeController)
-        
+        createEmployeeController.delegate = self
         present(navigationController, animated: true, completion: nil)
     }
     
