@@ -11,16 +11,13 @@ import CoreData
 
 class EmployeeListVC: UITableViewController {
     var employees = [Employee]()
-    func setTitle(company: Company) {
-        self.navigationItem.title = company.name
-    }
+    var company: Company?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.backgroundColor = ColorScheme.darkBlue
         
         self.setupRightButtonInNavigationBar(title: "Add", selector: #selector(self.addEmployeePressed))
-        
+        self.setupView()
         self.setupTableView()
         self.fetchEmployees()
     }
@@ -29,6 +26,7 @@ class EmployeeListVC: UITableViewController {
         let createEmployeeController = CreateEmployeeVC()
         let navigationController = CustomNavigationController(rootViewController: createEmployeeController)
         createEmployeeController.delegate = self
+        createEmployeeController.company = self.company
         present(navigationController, animated: true, completion: nil)
     }
     

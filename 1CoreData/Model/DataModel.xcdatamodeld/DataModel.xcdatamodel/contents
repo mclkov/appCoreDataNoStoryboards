@@ -11,7 +11,7 @@
         <relationship name="company" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Company" inverseName="employees" inverseEntity="Company" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Company" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="Company" positionX="-103.9921875" positionY="-57.3046875" width="128" height="103"/>
         <element name="Employee" positionX="157.39453125" positionY="-149.8203125" width="128" height="75"/>
     </elements>
 </model>

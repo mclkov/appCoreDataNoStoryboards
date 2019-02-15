@@ -9,6 +9,7 @@
 import UIKit
 
 class CreateEmployeeVC: UIViewController {
+    var company: Company?
     var delegate: EmployeeDataDelegate?
     
     let backgroundView: UIView = {
@@ -34,8 +35,11 @@ class CreateEmployeeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.setupView()
+    }
+    
+    func setCompany(company: Company) {
+        self.company = company
     }
     
     @objc func dismissByCancelPressed() {
@@ -48,7 +52,9 @@ class CreateEmployeeVC: UIViewController {
     
     func saveEmployeeAndUpdateTableView() {
         guard let employeeName = nameTextField.text else { return }
-        let coreDataResult = CoreDataManager.shared.createEmployee(employeeName: employeeName)
+        guard let company = self.company else { return }
+        
+        let coreDataResult = CoreDataManager.shared.createEmployee(employeeName: employeeName, company: company)
         let employee = coreDataResult.0
         let error = coreDataResult.1
         

@@ -57,7 +57,7 @@ struct CoreDataManager {
         }
     }
     
-    func createEmployee(employeeName: String) -> (Employee?, Error?) {
+    func createEmployee(employeeName: String, company: Company) -> (Employee?, Error?) {
         let context = persistentContainer.viewContext
         let employeeManagedObject = NSEntityDescription.insertNewObject(forEntityName: "Employee", into: context)
         employeeManagedObject.setValue(employeeName, forKey: "name")
@@ -66,6 +66,8 @@ struct CoreDataManager {
             let castError = NSError(domain: "Cannot cast employeeManagedObject to Employee", code: 0, userInfo: nil)
             return (nil, castError)
         }
+        
+        employee.company = company
         
         do {
             try context.save()
