@@ -31,15 +31,10 @@ class EmployeeListVC: UITableViewController {
     }
     
     private func fetchEmployees() {
-        let context = CoreDataManager.shared.persistentContainer.viewContext
-        let request = NSFetchRequest<Employee>(entityName: "Employee")
+        guard let company = self.company else { return }
+        guard let employees = company.employees?.allObjects as? [Employee] else { return }
         
-        do {
-            let employees = try context.fetch(request)            
-            self.employees = employees
-        } catch let error {
-            print("Failed to fetch employees:", error)
-        }
+        self.employees = employees
     }
     
     func amountOfRowsForTableView() -> Int {
