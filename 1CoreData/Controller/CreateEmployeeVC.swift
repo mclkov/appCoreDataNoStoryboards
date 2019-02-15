@@ -48,13 +48,21 @@ class CreateEmployeeVC: UIViewController {
     
     func saveEmployeeAndUpdateTableView() {
         guard let employeeName = nameTextField.text else { return }
-        let error = CoreDataManager.shared.createEmployee(employeeName: employeeName)
+        let coreDataResult = CoreDataManager.shared.createEmployee(employeeName: employeeName)
+        let employee = coreDataResult.0
+        let error = coreDataResult.1
         
         if let error = error {
             //TODO: present error
             print(error)
         } else {
-            dismiss(animated: true, completion: nil)
+            self.addWithAnimation(employee!)
+        }
+    }
+    
+    func addWithAnimation(_ employee: Employee) {
+        dismiss(animated: true) {
+            self.delegate?.didAddEmployee(employee: employee)
         }
     }
 }
