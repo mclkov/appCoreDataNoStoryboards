@@ -95,7 +95,7 @@ class CompanyListVC: UITableViewController {
     
     func setTableFooterHeight() -> CGFloat {
         if self.showTableFooterIfCompanyListIsEmpty() {
-            return HomeConstants.footerHeight
+            return CompaniesConstants.footerHeight
         } else {
             return 0.0
         }

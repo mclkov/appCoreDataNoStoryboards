@@ -15,7 +15,7 @@
 		601E70D521ECD18F003011F8 /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E70D421ECD18F003011F8 /* ColorScheme.swift */; };
 		601E70D721ECD7D8003011F8 /* CompanyListLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E70D621ECD7D8003011F8 /* CompanyListLayout.swift */; };
 		601E70DE21EE5D7A003011F8 /* CompanyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E70DD21EE5D7A003011F8 /* CompanyTableView.swift */; };
-		601E70E121EE60F2003011F8 /* HomeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E70E021EE60F2003011F8 /* HomeConstants.swift */; };
+		601E70E121EE60F2003011F8 /* CompaniesConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E70E021EE60F2003011F8 /* CompaniesConstants.swift */; };
 		601E70E321EFC2E4003011F8 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E70E221EFC2E4003011F8 /* Company.swift */; };
 		601E70E521EFC61F003011F8 /* CompanyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E70E421EFC61F003011F8 /* CompanyCell.swift */; };
 		601E70E821F321BD003011F8 /* CreateCompanyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E70E721F321BD003011F8 /* CreateCompanyVC.swift */; };
@@ -27,7 +27,7 @@
 		601E717F21FB6EFB003011F8 /* EditCompanyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E717E21FB6EFB003011F8 /* EditCompanyVC.swift */; };
 		601E718221FB72DD003011F8 /* EditCompanyLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E718121FB72DD003011F8 /* EditCompanyLayout.swift */; };
 		606DBBB12215F62300621EF1 /* EmployeeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606DBBB02215F62300621EF1 /* EmployeeTableView.swift */; };
-		606DBBB32215F99700621EF1 /* EmployeeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606DBBB22215F99700621EF1 /* EmployeeConstants.swift */; };
+		606DBBB32215F99700621EF1 /* EmployeesConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606DBBB22215F99700621EF1 /* EmployeesConstants.swift */; };
 		606DBBB52215FF9C00621EF1 /* EmployeeListVC+EmployeeDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606DBBB42215FF9C00621EF1 /* EmployeeListVC+EmployeeDataDelegate.swift */; };
 		606DBBB72217260400621EF1 /* EmployeeListLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606DBBB62217260400621EF1 /* EmployeeListLayout.swift */; };
 		60D9304222044C22005976BC /* CompanyListVC+CompanyDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9304122044C22005976BC /* CompanyListVC+CompanyDataDelegate.swift */; };
@@ -48,7 +48,7 @@
 		601E70D421ECD18F003011F8 /* ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
 		601E70D621ECD7D8003011F8 /* CompanyListLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyListLayout.swift; sourceTree = "<group>"; };
 		601E70DD21EE5D7A003011F8 /* CompanyTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyTableView.swift; sourceTree = "<group>"; };
-		601E70E021EE60F2003011F8 /* HomeConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeConstants.swift; sourceTree = "<group>"; };
+		601E70E021EE60F2003011F8 /* CompaniesConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesConstants.swift; sourceTree = "<group>"; };
 		601E70E221EFC2E4003011F8 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		601E70E421EFC61F003011F8 /* CompanyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyCell.swift; sourceTree = "<group>"; };
 		601E70E721F321BD003011F8 /* CreateCompanyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCompanyVC.swift; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 		601E717E21FB6EFB003011F8 /* EditCompanyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCompanyVC.swift; sourceTree = "<group>"; };
 		601E718121FB72DD003011F8 /* EditCompanyLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCompanyLayout.swift; sourceTree = "<group>"; };
 		606DBBB02215F62300621EF1 /* EmployeeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableView.swift; sourceTree = "<group>"; };
-		606DBBB22215F99700621EF1 /* EmployeeConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeConstants.swift; sourceTree = "<group>"; };
+		606DBBB22215F99700621EF1 /* EmployeesConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesConstants.swift; sourceTree = "<group>"; };
 		606DBBB42215FF9C00621EF1 /* EmployeeListVC+EmployeeDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmployeeListVC+EmployeeDataDelegate.swift"; sourceTree = "<group>"; };
 		606DBBB62217260400621EF1 /* EmployeeListLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListLayout.swift; sourceTree = "<group>"; };
 		60D9304122044C22005976BC /* CompanyListVC+CompanyDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompanyListVC+CompanyDataDelegate.swift"; sourceTree = "<group>"; };
@@ -150,8 +150,8 @@
 		601E70DF21EE602E003011F8 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				601E70E021EE60F2003011F8 /* HomeConstants.swift */,
-				606DBBB22215F99700621EF1 /* EmployeeConstants.swift */,
+				601E70E021EE60F2003011F8 /* CompaniesConstants.swift */,
+				606DBBB22215F99700621EF1 /* EmployeesConstants.swift */,
 				60D93045220781FC005976BC /* UIViewController+NavigationBar.swift */,
 			);
 			path = Utilities;
@@ -310,12 +310,12 @@
 				601E70E521EFC61F003011F8 /* CompanyCell.swift in Sources */,
 				606DBBB72217260400621EF1 /* EmployeeListLayout.swift in Sources */,
 				601E70EA21F322DA003011F8 /* CreateCompanyLayout.swift in Sources */,
-				601E70E121EE60F2003011F8 /* HomeConstants.swift in Sources */,
+				601E70E121EE60F2003011F8 /* CompaniesConstants.swift in Sources */,
 				601E718221FB72DD003011F8 /* EditCompanyLayout.swift in Sources */,
 				606DBBB12215F62300621EF1 /* EmployeeTableView.swift in Sources */,
 				601E70DE21EE5D7A003011F8 /* CompanyTableView.swift in Sources */,
 				60D93046220781FC005976BC /* UIViewController+NavigationBar.swift in Sources */,
-				606DBBB32215F99700621EF1 /* EmployeeConstants.swift in Sources */,
+				606DBBB32215F99700621EF1 /* EmployeesConstants.swift in Sources */,
 				601E70E821F321BD003011F8 /* CreateCompanyVC.swift in Sources */,
 				601E70F321F5F39B003011F8 /* DataModel.xcdatamodeld in Sources */,
 				601E70C121ECC40D003011F8 /* AppDelegate.swift in Sources */,

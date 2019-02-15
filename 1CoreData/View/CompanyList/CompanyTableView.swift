@@ -25,11 +25,11 @@ extension CompanyListVC {
     }
     
     func registerCellReuseId() {
-        self.tableView.register(CompanyCell.self, forCellReuseIdentifier: HomeConstants.cellReuseId)
+        self.tableView.register(CompanyCell.self, forCellReuseIdentifier: CompaniesConstants.cellReuseId)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: HomeConstants.cellReuseId, for: indexPath) as! CompanyCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: CompaniesConstants.cellReuseId, for: indexPath) as! CompanyCell
         let company = self.companies[indexPath.row]
         
         cell.configureCell(company: company)
@@ -77,11 +77,11 @@ extension CompanyListVC {
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return HomeConstants.headerHeight
+        return CompaniesConstants.headerHeight
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return HomeConstants.cellHeight
+        return CompaniesConstants.cellHeight
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {

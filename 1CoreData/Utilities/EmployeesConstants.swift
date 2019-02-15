@@ -8,6 +8,6 @@
 
 import UIKit
 
-struct EmployeeConstants {
+struct EmployeesConstants {
     static let cellReuseId = "employeeCellId"
 }

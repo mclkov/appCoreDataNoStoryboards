@@ -15,7 +15,7 @@ extension EmployeeListVC {
     }
     
     func registerCellReuseId() {
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: EmployeeConstants.cellReuseId)
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: EmployeesConstants.cellReuseId)
     }
     
     func setupTableViewStyles() {
@@ -28,7 +28,7 @@ extension EmployeeListVC {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: EmployeeConstants.cellReuseId, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: EmployeesConstants.cellReuseId, for: indexPath)
         
         let employee = employees[indexPath.row]
         cell.textLabel?.text = employee.name

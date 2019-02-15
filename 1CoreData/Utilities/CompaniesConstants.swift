@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct HomeConstants {
+struct CompaniesConstants {
     static let cellReuseId = "cellId"
     
     static let headerHeight: CGFloat = 50.0

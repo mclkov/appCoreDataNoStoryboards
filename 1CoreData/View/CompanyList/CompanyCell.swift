@@ -10,7 +10,7 @@ import UIKit
 
 class CompanyCell: UITableViewCell {
     let companyImage: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: HomeConstants.noImageFile))
+        let imageView = UIImageView(image: UIImage(named: CompaniesConstants.noImageFile))
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.layer.cornerRadius = 20
         imageView.clipsToBounds = true
