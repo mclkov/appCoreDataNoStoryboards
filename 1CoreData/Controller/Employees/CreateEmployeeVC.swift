@@ -74,9 +74,10 @@ class CreateEmployeeVC: UIViewController {
             return
         }
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        guard let birthdayDate = dateFormatter.date(from: birthdayText) else { return }
+        guard let birthdayDate = self.stringToDate(birthdayText) else {
+            self.showAlertOnInvalidBirthday()
+            return
+        }
         
         let coreDataResult = CoreDataManager.shared.createEmployee(employeeName: employeeName, birthday: birthdayDate, company: company)
         let employee = coreDataResult.0
@@ -91,11 +92,26 @@ class CreateEmployeeVC: UIViewController {
     }
     
     func showAlertOnBirthdayTextIsEmpty() {
-        let alertController = UIAlertController(title: "Birthday is not set", message: "Field birthday is required", preferredStyle: .alert)
+        self.showAlert(title: "Birthday is not set", message: "Field birthday is required")
+    }
+    
+    func showAlertOnInvalidBirthday() {
+        self.showAlert(title: "Invalid birthday", message: "Please, follow the format dd/MM/yyyy")
+    }
+    
+    func showAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let alertActionOk = UIAlertAction(title: "Ok", style: .default, handler: nil)
         alertController.addAction(alertActionOk)
         
         present(alertController, animated: true, completion: nil)
+    }
+    
+    func stringToDate(_ string: String) -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        guard let birthdayDate = dateFormatter.date(from: string) else { return nil }
+        return birthdayDate
     }
     
     func addWithAnimation(_ employee: Employee) {
