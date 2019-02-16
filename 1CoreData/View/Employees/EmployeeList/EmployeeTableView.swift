@@ -38,8 +38,6 @@ extension EmployeeListVC {
         var employeeDescription = employee.name ?? ""
         if let birthday = employee.employeeDetails?.birthday {
             employeeDescription = "\(employeeDescription), \(birthday)"
-        }else{
-            employeeDescription = "\(employeeDescription), 0"
         }
         cell.textLabel?.text = employeeDescription
         
