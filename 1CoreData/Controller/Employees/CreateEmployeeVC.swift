@@ -40,6 +40,13 @@ class CreateEmployeeVC: UIViewController {
         return label
     }()
     
+    let birthdayTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Birthday"
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()

@@ -16,6 +16,7 @@ extension CreateEmployeeVC {
         self.setupNameLabel()
         self.setupNameTextField()
         self.setupBirthdayLabel()
+        self.setupBirthdayTextField()
     }
     
     func setupNavigationItem() {
@@ -75,5 +76,17 @@ extension CreateEmployeeVC {
         birthdayLabel.leftAnchor.constraint(equalTo: nameLabel.leftAnchor).isActive = true
         birthdayLabel.widthAnchor.constraint(equalTo: nameLabel.widthAnchor).isActive = true
         birthdayLabel.heightAnchor.constraint(equalTo: nameLabel.heightAnchor).isActive = true
+    }
+    
+    private func setupBirthdayTextField() {
+        view.addSubview(birthdayTextField)
+        self.setupBirthdayTextFieldAnchors()
+    }
+    
+    private func setupBirthdayTextFieldAnchors() {
+        birthdayTextField.topAnchor.constraint(equalTo: birthdayLabel.topAnchor).isActive = true
+        birthdayTextField.leftAnchor.constraint(equalTo: birthdayLabel.rightAnchor).isActive = true
+        birthdayTextField.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        birthdayTextField.bottomAnchor.constraint(equalTo: birthdayLabel.bottomAnchor).isActive = true
     }
 }
