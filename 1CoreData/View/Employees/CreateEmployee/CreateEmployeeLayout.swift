@@ -36,7 +36,7 @@ extension CreateEmployeeVC {
         backgroundView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         backgroundView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         backgroundView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        backgroundView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        backgroundView.heightAnchor.constraint(equalToConstant: 100).isActive = true
     }
     
     private func setupNameLabel() {
