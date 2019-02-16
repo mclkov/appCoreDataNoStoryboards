@@ -42,7 +42,7 @@ class CreateEmployeeVC: UIViewController {
     
     let birthdayTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Birthday"
+        textField.placeholder = "28/12/1900"
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -66,9 +66,15 @@ class CreateEmployeeVC: UIViewController {
     
     func saveEmployeeAndUpdateTableView() {
         guard let employeeName = nameTextField.text else { return }
+        guard let birthdayText = birthdayTextField.text else { return }
         guard let company = self.company else { return }
         
-        let coreDataResult = CoreDataManager.shared.createEmployee(employeeName: employeeName, company: company)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        guard let birthdayDate = dateFormatter.date(from: birthdayText) else { return }
+        
+        
+        let coreDataResult = CoreDataManager.shared.createEmployee(employeeName: employeeName, birthday: birthdayDate, company: company)
         let employee = coreDataResult.0
         let error = coreDataResult.1
         

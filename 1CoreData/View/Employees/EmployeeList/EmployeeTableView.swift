@@ -31,10 +31,17 @@ extension EmployeeListVC {
         let cell = tableView.dequeueReusableCell(withIdentifier: EmployeesConstants.cellReuseId, for: indexPath)
         
         let employee = employees[indexPath.row]
-        cell.textLabel?.text = employee.name
         cell.textLabel?.textColor = .white
         cell.backgroundColor = ColorScheme.teal
-//        cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 15)
+        cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 15)
+        
+        var employeeDescription = employee.name ?? ""
+        if let birthday = employee.employeeDetails?.birthday {
+            employeeDescription = "\(employeeDescription), \(birthday)"
+        }else{
+            employeeDescription = "\(employeeDescription), 0"
+        }
+        cell.textLabel?.text = employeeDescription
         
         return cell
     }
