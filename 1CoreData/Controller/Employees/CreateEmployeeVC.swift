@@ -69,10 +69,14 @@ class CreateEmployeeVC: UIViewController {
         guard let birthdayText = birthdayTextField.text else { return }
         guard let company = self.company else { return }
         
+        if birthdayText.isEmpty {
+            self.showAlertOnBirthdayTextIsEmpty()
+            return
+        }
+        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
         guard let birthdayDate = dateFormatter.date(from: birthdayText) else { return }
-        
         
         let coreDataResult = CoreDataManager.shared.createEmployee(employeeName: employeeName, birthday: birthdayDate, company: company)
         let employee = coreDataResult.0
@@ -84,6 +88,14 @@ class CreateEmployeeVC: UIViewController {
         } else {
             self.addWithAnimation(employee!)
         }
+    }
+    
+    func showAlertOnBirthdayTextIsEmpty() {
+        let alertController = UIAlertController(title: "Birthday is not set", message: "Field birthday is required", preferredStyle: .alert)
+        let alertActionOk = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alertController.addAction(alertActionOk)
+        
+        present(alertController, animated: true, completion: nil)
     }
     
     func addWithAnimation(_ employee: Employee) {
