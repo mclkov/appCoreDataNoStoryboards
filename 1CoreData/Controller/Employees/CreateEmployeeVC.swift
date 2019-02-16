@@ -99,14 +99,6 @@ class CreateEmployeeVC: UIViewController {
         self.showAlert(title: "Invalid birthday", message: "Please, follow the format dd/MM/yyyy")
     }
     
-    func showAlert(title: String, message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let alertActionOk = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        alertController.addAction(alertActionOk)
-        
-        present(alertController, animated: true, completion: nil)
-    }
-    
     func stringToDate(_ string: String) -> Date? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
