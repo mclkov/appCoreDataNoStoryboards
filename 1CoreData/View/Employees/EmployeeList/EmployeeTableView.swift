@@ -72,7 +72,7 @@ extension EmployeeListVC {
     }
     
     func getHeaderSectionLabel(text: String) -> UILabel {
-        let label = UILabel()
+        let label = IndentedLabel()
         label.textColor = ColorScheme.darkBlue
         label.backgroundColor = ColorScheme.lightBlue
         label.text = text

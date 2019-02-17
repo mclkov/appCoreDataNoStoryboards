@@ -30,6 +30,7 @@
 		606DBBB32215F99700621EF1 /* EmployeesConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606DBBB22215F99700621EF1 /* EmployeesConstants.swift */; };
 		606DBBB52215FF9C00621EF1 /* EmployeeListVC+EmployeeDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606DBBB42215FF9C00621EF1 /* EmployeeListVC+EmployeeDataDelegate.swift */; };
 		606DBBB72217260400621EF1 /* EmployeeListLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606DBBB62217260400621EF1 /* EmployeeListLayout.swift */; };
+		606DBBBD22198A2F00621EF1 /* IndentedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606DBBBC22198A2F00621EF1 /* IndentedLabel.swift */; };
 		60D9304222044C22005976BC /* CompanyListVC+CompanyDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9304122044C22005976BC /* CompanyListVC+CompanyDataDelegate.swift */; };
 		60D9304422077BC0005976BC /* EmployeeListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9304322077BC0005976BC /* EmployeeListVC.swift */; };
 		60D93046220781FC005976BC /* UIViewController+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D93045220781FC005976BC /* UIViewController+NavigationBar.swift */; };
@@ -63,6 +64,7 @@
 		606DBBB22215F99700621EF1 /* EmployeesConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesConstants.swift; sourceTree = "<group>"; };
 		606DBBB42215FF9C00621EF1 /* EmployeeListVC+EmployeeDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmployeeListVC+EmployeeDataDelegate.swift"; sourceTree = "<group>"; };
 		606DBBB62217260400621EF1 /* EmployeeListLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListLayout.swift; sourceTree = "<group>"; };
+		606DBBBC22198A2F00621EF1 /* IndentedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndentedLabel.swift; sourceTree = "<group>"; };
 		60D9304122044C22005976BC /* CompanyListVC+CompanyDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompanyListVC+CompanyDataDelegate.swift"; sourceTree = "<group>"; };
 		60D9304322077BC0005976BC /* EmployeeListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListVC.swift; sourceTree = "<group>"; };
 		60D93045220781FC005976BC /* UIViewController+NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavigationBar.swift"; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				601E70D421ECD18F003011F8 /* ColorScheme.swift */,
 				601E70EB21F3253A003011F8 /* SetNavigationBarTheme.swift */,
 				601E717C21FB51DB003011F8 /* ManageCompanyLayout.swift */,
+				606DBBBC22198A2F00621EF1 /* IndentedLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				601E70F321F5F39B003011F8 /* DataModel.xcdatamodeld in Sources */,
 				601E70C121ECC40D003011F8 /* AppDelegate.swift in Sources */,
 				601E717D21FB51DB003011F8 /* ManageCompanyLayout.swift in Sources */,
+				606DBBBD22198A2F00621EF1 /* IndentedLabel.swift in Sources */,
 				601E70F621F71C60003011F8 /* CoreDataManager.swift in Sources */,
 				601E70E321EFC2E4003011F8 /* Company.swift in Sources */,
 				60D93048220783B7005976BC /* CreateEmployeeVC.swift in Sources */,
