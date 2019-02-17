@@ -13,6 +13,9 @@ class EmployeeListVC: UITableViewController {
     var employees = [Employee]()
     var company: Company?
     
+    var shortNameEmployees = [Employee]()
+    var longNameEmployees = [Employee]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,11 +37,49 @@ class EmployeeListVC: UITableViewController {
         guard let company = self.company else { return }
         guard let employees = company.employees?.allObjects as? [Employee] else { return }
         
-        self.employees = employees
+        self.setSections(employees: employees)
     }
     
-    func amountOfRowsForTableView() -> Int {
-        return employees.count
+    func setSections(employees: [Employee]) {
+        self.setShortNames(employees: employees)
+        self.setLongNames(employees: employees)
+    }
+    
+    func setShortNames(employees: [Employee]) {
+        self.shortNameEmployees = employees.filter({ (employee) -> Bool in
+            if let count = employee.name?.count {
+                return self.conditionForShortNames(length: count)
+            }
+            return false
+        })
+    }
+    
+    func conditionForShortNames(length: Int) -> Bool {
+        return length <= 6
+    }
+    
+    func setLongNames(employees: [Employee]) {
+        self.longNameEmployees = employees.filter({ (employee) -> Bool in
+            if let count = employee.name?.count {
+                return self.conditionForLongNames(length: count)
+            }
+            return false
+        })
+    }
+    
+    func conditionForLongNames(length: Int) -> Bool {
+        return length > 6
+    }
+    
+    func amountOfRowsForTableView(section: Int) -> Int {
+        var rows = 0
+        if section == 0 {
+            rows = self.shortNameEmployees.count
+        } else if section == 1 {
+           rows = self.longNameEmployees.count
+        }
+        
+        return rows
     }
     
     func amountOfSectionsForTableView() -> Int {

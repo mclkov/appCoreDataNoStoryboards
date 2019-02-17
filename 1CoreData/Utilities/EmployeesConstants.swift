@@ -10,4 +10,5 @@ import UIKit
 
 struct EmployeesConstants {
     static let cellReuseId = "employeeCellId"
+    static let headerHeight: CGFloat = 50.0
 }

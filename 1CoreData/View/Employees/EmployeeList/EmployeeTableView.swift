@@ -24,13 +24,13 @@ extension EmployeeListVC {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.amountOfRowsForTableView()
+        return self.amountOfRowsForTableView(section: section)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: EmployeesConstants.cellReuseId, for: indexPath)
+        let employee = self.getEmployee(indexPath: indexPath)
         
-        let employee = employees[indexPath.row]
         cell.textLabel?.textColor = .white
         cell.backgroundColor = ColorScheme.teal
         cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 15)
@@ -44,19 +44,47 @@ extension EmployeeListVC {
         return cell
     }
     
+    func getEmployee(indexPath: IndexPath) -> Employee {
+        let section = indexPath.section
+        let row = indexPath.row
+        
+        var employee = Employee()
+        if section == 0 {
+            employee = self.shortNameEmployees[row]
+        } else if section == 1 {
+            employee = self.longNameEmployees[row]
+        }
+        
+        return employee
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return self.amountOfSectionsForTableView()
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return self.addExtraCellToBeginning()
+        return self.addExtraCellToBeginningOfSection(section)
     }
     
-    func addExtraCellToBeginning() -> UIView {
-        let view = UIView()
-        view.backgroundColor = ColorScheme.lightBlue
+    func addExtraCellToBeginningOfSection(_ section: Int) -> UIView {
+        var headerText = ""
+        if section == 0 {
+            headerText = "Short names"
+        } else {
+            headerText = "Long names"
+        }
         
-        return view
+        let label = UILabel()
+        label.textColor = ColorScheme.darkBlue
+        label.backgroundColor = ColorScheme.lightBlue
+        label.text = headerText
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        
+        return label
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return EmployeesConstants.headerHeight
     }
     
 }
