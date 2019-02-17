@@ -42,17 +42,14 @@ class EmployeeListVC: UITableViewController {
     }
     
     func setSections(employees: [Employee]) {
-        self.setShortNames(employees: employees)
-        self.setLongNames(employees: employees)
-        
         self.allEmployees = [
-            self.shortNameEmployees,
-            self.longNameEmployees
+            self.getShortNameEmployees(employees: employees),
+            self.getLongNameEmployees(employees: employees)
         ]
     }
     
-    func setShortNames(employees: [Employee]) {
-        self.shortNameEmployees = employees.filter({ (employee) -> Bool in
+    func getShortNameEmployees(employees: [Employee]) -> [Employee] {
+        return employees.filter({ (employee) -> Bool in
             if let count = employee.name?.count {
                 return self.conditionForShortNames(length: count)
             }
@@ -64,8 +61,8 @@ class EmployeeListVC: UITableViewController {
         return length <= 6
     }
     
-    func setLongNames(employees: [Employee]) {
-        self.longNameEmployees = employees.filter({ (employee) -> Bool in
+    func getLongNameEmployees(employees: [Employee]) -> [Employee] {
+        return employees.filter({ (employee) -> Bool in
             if let count = employee.name?.count {
                 return self.conditionForLongNames(length: count)
             }
