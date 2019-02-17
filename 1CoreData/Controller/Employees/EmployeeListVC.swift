@@ -40,4 +40,8 @@ class EmployeeListVC: UITableViewController {
     func amountOfRowsForTableView() -> Int {
         return employees.count
     }
+    
+    func amountOfSectionsForTableView() -> Int {
+        return 2
+    }
 }

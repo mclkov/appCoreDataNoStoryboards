@@ -44,4 +44,19 @@ extension EmployeeListVC {
         return cell
     }
     
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return self.amountOfSectionsForTableView()
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return self.addExtraCellToBeginning()
+    }
+    
+    func addExtraCellToBeginning() -> UIView {
+        let view = UIView()
+        view.backgroundColor = ColorScheme.lightBlue
+        
+        return view
+    }
+    
 }
