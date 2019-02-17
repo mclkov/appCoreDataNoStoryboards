@@ -29,7 +29,7 @@ extension EmployeeListVC {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: EmployeesConstants.cellReuseId, for: indexPath)
-        let employee = self.getEmployee(indexPath: indexPath)
+        let employee = self.getEmployeeBy(indexPath: indexPath)
         
         cell.textLabel?.textColor = .white
         cell.backgroundColor = ColorScheme.teal
@@ -44,7 +44,7 @@ extension EmployeeListVC {
         return cell
     }
     
-    func getEmployee(indexPath: IndexPath) -> Employee {
+    func getEmployeeBy(indexPath: IndexPath) -> Employee {
         let section = indexPath.section
         let row = indexPath.row
         let employee = allEmployees[section][row]
@@ -68,10 +68,14 @@ extension EmployeeListVC {
             headerText = "Long names"
         }
         
+        return self.getHeaderSectionLabel(text: headerText)
+    }
+    
+    func getHeaderSectionLabel(text: String) -> UILabel {
         let label = UILabel()
         label.textColor = ColorScheme.darkBlue
         label.backgroundColor = ColorScheme.lightBlue
-        label.text = headerText
+        label.text = text
         label.font = UIFont.boldSystemFont(ofSize: 16)
         
         return label
