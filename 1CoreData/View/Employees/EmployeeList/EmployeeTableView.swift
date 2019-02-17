@@ -47,13 +47,7 @@ extension EmployeeListVC {
     func getEmployee(indexPath: IndexPath) -> Employee {
         let section = indexPath.section
         let row = indexPath.row
-        
-        var employee = Employee()
-        if section == 0 {
-            employee = self.shortNameEmployees[row]
-        } else if section == 1 {
-            employee = self.longNameEmployees[row]
-        }
+        let employee = allEmployees[section][row]
         
         return employee
     }

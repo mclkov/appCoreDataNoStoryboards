@@ -13,6 +13,7 @@ class EmployeeListVC: UITableViewController {
     var employees = [Employee]()
     var company: Company?
     
+    var allEmployees = [[Employee]]()
     var shortNameEmployees = [Employee]()
     var longNameEmployees = [Employee]()
     
@@ -43,6 +44,11 @@ class EmployeeListVC: UITableViewController {
     func setSections(employees: [Employee]) {
         self.setShortNames(employees: employees)
         self.setLongNames(employees: employees)
+        
+        self.allEmployees = [
+            self.shortNameEmployees,
+            self.longNameEmployees
+        ]
     }
     
     func setShortNames(employees: [Employee]) {
@@ -72,17 +78,10 @@ class EmployeeListVC: UITableViewController {
     }
     
     func amountOfRowsForTableView(section: Int) -> Int {
-        var rows = 0
-        if section == 0 {
-            rows = self.shortNameEmployees.count
-        } else if section == 1 {
-           rows = self.longNameEmployees.count
-        }
-        
-        return rows
+        return allEmployees[section].count
     }
     
     func amountOfSectionsForTableView() -> Int {
-        return 2
+        return allEmployees.count
     }
 }
