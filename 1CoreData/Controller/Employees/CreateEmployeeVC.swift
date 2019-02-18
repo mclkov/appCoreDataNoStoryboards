@@ -84,7 +84,7 @@ class CreateEmployeeVC: UIViewController {
         let error = coreDataResult.1
         
         if let error = error {
-            //TODO: present error
+            self.showAlertOnCoreDataFails()
             print(error)
         } else {
             self.addWithAnimation(employee!)
@@ -97,6 +97,10 @@ class CreateEmployeeVC: UIViewController {
     
     func showAlertOnInvalidBirthday() {
         self.showAlert(title: "Invalid birthday", message: "Please, follow the format dd/MM/yyyy")
+    }
+    
+    func showAlertOnCoreDataFails() {
+        self.showAlert(title: "Storage error", message: "Cannot save employee")
     }
     
     func stringToDate(_ string: String) -> Date? {
