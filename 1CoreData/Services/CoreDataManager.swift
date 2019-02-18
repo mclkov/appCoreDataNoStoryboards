@@ -57,7 +57,7 @@ struct CoreDataManager {
         }
     }
     
-    func createEmployee(employeeName: String, birthday: Date, company: Company) -> (Employee?, Error?) {
+    func createEmployee(_ employeeProperties: EmployeeProperties) -> (Employee?, Error?) {
         let context = persistentContainer.viewContext
         let employeeManagedObject = NSEntityDescription.insertNewObject(forEntityName: "Employee", into: context)
         let employeeDetailsManagedObject = NSEntityDescription.insertNewObject(forEntityName: "EmployeeDetails", into: context)
@@ -72,9 +72,9 @@ struct CoreDataManager {
             return (nil, castError)
         }
         
-        employee.name = employeeName
-        employee.company = company
-        employeeDetails.birthday = birthday
+        employee.name = employeeProperties.name
+        employee.company = employeeProperties.company
+        employeeDetails.birthday = employeeProperties.birthday
         employee.employeeDetails = employeeDetails
         
         do {

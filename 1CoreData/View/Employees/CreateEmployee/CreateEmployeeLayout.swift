@@ -13,10 +13,12 @@ extension CreateEmployeeVC {
         self.setupNavigationItem()
         self.setupBackgroundColor()
         self.setupBackgroundView()
+        
         self.setupNameLabel()
         self.setupNameTextField()
         self.setupBirthdayLabel()
         self.setupBirthdayTextField()
+        self.setupEmployeeTypeSegmentedControl()
     }
     
     func setupNavigationItem() {
@@ -35,10 +37,12 @@ extension CreateEmployeeVC {
     }
     
     private func setupBackgroundViewAnchors() {
+        let amountOfFields: CGFloat = 3
+        
         backgroundView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         backgroundView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         backgroundView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        backgroundView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        backgroundView.heightAnchor.constraint(equalToConstant: 50 * amountOfFields).isActive = true
     }
     
     private func setupNameLabel() {
@@ -88,6 +92,18 @@ extension CreateEmployeeVC {
         birthdayTextField.leftAnchor.constraint(equalTo: birthdayLabel.rightAnchor).isActive = true
         birthdayTextField.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         birthdayTextField.bottomAnchor.constraint(equalTo: birthdayLabel.bottomAnchor).isActive = true
+    }
+    
+    private func setupEmployeeTypeSegmentedControl() {
+        view.addSubview(employeeTypeSegmentedControl)
+        self.setupEmployeeTypeSegmentedControlAnchors()
+    }
+    
+    private func setupEmployeeTypeSegmentedControlAnchors() {
+        employeeTypeSegmentedControl.topAnchor.constraint(equalTo: birthdayLabel.bottomAnchor).isActive = true
+        employeeTypeSegmentedControl.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
+        employeeTypeSegmentedControl.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16).isActive = true
+        employeeTypeSegmentedControl.heightAnchor.constraint(equalToConstant: 34).isActive = true
     }
     
     func showAlert(title: String, message: String) {

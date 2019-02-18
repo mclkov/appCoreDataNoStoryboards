@@ -16,7 +16,6 @@
 		601E70D721ECD7D8003011F8 /* CompanyListLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E70D621ECD7D8003011F8 /* CompanyListLayout.swift */; };
 		601E70DE21EE5D7A003011F8 /* CompanyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E70DD21EE5D7A003011F8 /* CompanyTableView.swift */; };
 		601E70E121EE60F2003011F8 /* CompaniesConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E70E021EE60F2003011F8 /* CompaniesConstants.swift */; };
-		601E70E321EFC2E4003011F8 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E70E221EFC2E4003011F8 /* Company.swift */; };
 		601E70E521EFC61F003011F8 /* CompanyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E70E421EFC61F003011F8 /* CompanyCell.swift */; };
 		601E70E821F321BD003011F8 /* CreateCompanyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E70E721F321BD003011F8 /* CreateCompanyVC.swift */; };
 		601E70EA21F322DA003011F8 /* CreateCompanyLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601E70E921F322DA003011F8 /* CreateCompanyLayout.swift */; };
@@ -31,6 +30,7 @@
 		606DBBB52215FF9C00621EF1 /* EmployeeListVC+EmployeeDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606DBBB42215FF9C00621EF1 /* EmployeeListVC+EmployeeDataDelegate.swift */; };
 		606DBBB72217260400621EF1 /* EmployeeListLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606DBBB62217260400621EF1 /* EmployeeListLayout.swift */; };
 		606DBBBD22198A2F00621EF1 /* IndentedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606DBBBC22198A2F00621EF1 /* IndentedLabel.swift */; };
+		606DBBBF221AAC9500621EF1 /* EmployeeProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606DBBBE221AAC9500621EF1 /* EmployeeProperties.swift */; };
 		60D9304222044C22005976BC /* CompanyListVC+CompanyDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9304122044C22005976BC /* CompanyListVC+CompanyDataDelegate.swift */; };
 		60D9304422077BC0005976BC /* EmployeeListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D9304322077BC0005976BC /* EmployeeListVC.swift */; };
 		60D93046220781FC005976BC /* UIViewController+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D93045220781FC005976BC /* UIViewController+NavigationBar.swift */; };
@@ -50,7 +50,6 @@
 		601E70D621ECD7D8003011F8 /* CompanyListLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyListLayout.swift; sourceTree = "<group>"; };
 		601E70DD21EE5D7A003011F8 /* CompanyTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyTableView.swift; sourceTree = "<group>"; };
 		601E70E021EE60F2003011F8 /* CompaniesConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesConstants.swift; sourceTree = "<group>"; };
-		601E70E221EFC2E4003011F8 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		601E70E421EFC61F003011F8 /* CompanyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyCell.swift; sourceTree = "<group>"; };
 		601E70E721F321BD003011F8 /* CreateCompanyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCompanyVC.swift; sourceTree = "<group>"; };
 		601E70E921F322DA003011F8 /* CreateCompanyLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCompanyLayout.swift; sourceTree = "<group>"; };
@@ -65,6 +64,7 @@
 		606DBBB42215FF9C00621EF1 /* EmployeeListVC+EmployeeDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmployeeListVC+EmployeeDataDelegate.swift"; sourceTree = "<group>"; };
 		606DBBB62217260400621EF1 /* EmployeeListLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListLayout.swift; sourceTree = "<group>"; };
 		606DBBBC22198A2F00621EF1 /* IndentedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndentedLabel.swift; sourceTree = "<group>"; };
+		606DBBBE221AAC9500621EF1 /* EmployeeProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeProperties.swift; sourceTree = "<group>"; };
 		60D9304122044C22005976BC /* CompanyListVC+CompanyDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompanyListVC+CompanyDataDelegate.swift"; sourceTree = "<group>"; };
 		60D9304322077BC0005976BC /* EmployeeListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListVC.swift; sourceTree = "<group>"; };
 		60D93045220781FC005976BC /* UIViewController+NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavigationBar.swift"; sourceTree = "<group>"; };
@@ -141,8 +141,8 @@
 		601E70DA21ECD7F1003011F8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				601E70E221EFC2E4003011F8 /* Company.swift */,
 				601E70F121F5F39B003011F8 /* DataModel.xcdatamodeld */,
+				606DBBBE221AAC9500621EF1 /* EmployeeProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -341,10 +341,10 @@
 				601E717D21FB51DB003011F8 /* ManageCompanyLayout.swift in Sources */,
 				606DBBBD22198A2F00621EF1 /* IndentedLabel.swift in Sources */,
 				601E70F621F71C60003011F8 /* CoreDataManager.swift in Sources */,
-				601E70E321EFC2E4003011F8 /* Company.swift in Sources */,
 				60D93048220783B7005976BC /* CreateEmployeeVC.swift in Sources */,
 				60D9304422077BC0005976BC /* EmployeeListVC.swift in Sources */,
 				606DBBB52215FF9C00621EF1 /* EmployeeListVC+EmployeeDataDelegate.swift in Sources */,
+				606DBBBF221AAC9500621EF1 /* EmployeeProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

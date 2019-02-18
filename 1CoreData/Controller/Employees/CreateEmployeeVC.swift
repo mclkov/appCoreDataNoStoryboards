@@ -47,6 +47,15 @@ class CreateEmployeeVC: UIViewController {
         return textField
     }()
     
+    let employeeTypeSegmentedControl: UISegmentedControl = {
+        let types = ["Executive", "Senior Management", "Staff"]
+        let control = UISegmentedControl(items: types)
+        control.selectedSegmentIndex = 0
+        control.tintColor = ColorScheme.darkBlue
+        control.translatesAutoresizingMaskIntoConstraints = false
+        return control
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
@@ -79,7 +88,10 @@ class CreateEmployeeVC: UIViewController {
             return
         }
         
-        let coreDataResult = CoreDataManager.shared.createEmployee(employeeName: employeeName, birthday: birthdayDate, company: company)
+        let employeeType = employeeTypeSegmentedControl.titleForSegment(at: employeeTypeSegmentedControl.selectedSegmentIndex)
+    
+        let employeeProperties = EmployeeProperties(name: employeeName, birthday: birthdayDate, company: company, )
+        let coreDataResult = CoreDataManager.shared.createEmployee(employeeProperties)
         let employee = coreDataResult.0
         let error = coreDataResult.1
         
