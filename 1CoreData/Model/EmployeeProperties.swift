@@ -8,15 +8,9 @@
 
 import Foundation
 
-enum EmployeeType {
-    case executive
-    case seniorManagement
-    case staff
-}
-
 struct EmployeeProperties {
     let name: String
     let birthday: Date
     let company: Company
-    let employeeType: EmployeeType
+    let employeeType: String
 }

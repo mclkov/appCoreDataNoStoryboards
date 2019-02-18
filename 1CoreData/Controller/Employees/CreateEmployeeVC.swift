@@ -88,9 +88,10 @@ class CreateEmployeeVC: UIViewController {
             return
         }
         
-        let employeeType = employeeTypeSegmentedControl.titleForSegment(at: employeeTypeSegmentedControl.selectedSegmentIndex)
-    
-        let employeeProperties = EmployeeProperties(name: employeeName, birthday: birthdayDate, company: company, )
+        guard let employeeType = employeeTypeSegmentedControl.titleForSegment(at: employeeTypeSegmentedControl.selectedSegmentIndex) else
+        { return }
+        
+        let employeeProperties = EmployeeProperties(name: employeeName, birthday: birthdayDate, company: company, employeeType: employeeType)
         let coreDataResult = CoreDataManager.shared.createEmployee(employeeProperties)
         let employee = coreDataResult.0
         let error = coreDataResult.1

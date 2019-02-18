@@ -34,7 +34,7 @@ class EmployeeListVC: UITableViewController {
         present(navigationController, animated: true, completion: nil)
     }
     
-    private func fetchEmployees() {
+    func fetchEmployees() {
         guard let company = self.company else { return }
         guard let employees = company.employees?.allObjects as? [Employee] else { return }
         

@@ -14,9 +14,11 @@ protocol EmployeeDataDelegate {
 
 extension EmployeeListVC: EmployeeDataDelegate{
     func didAddEmployee(employee: Employee) {
-        self.employees.append(employee)
-        let nextIndexValue = employees.count - 1
-        let newIndexPath = IndexPath(row: nextIndexValue, section: 0)
-        tableView.insertRows(at: [newIndexPath], with: .automatic)
+        self.fetchEmployees()
+        self.tableView.reloadData()
+//        self.employees.append(employee)
+//        let nextIndexValue = employees.count - 1
+//        let newIndexPath = IndexPath(row: nextIndexValue, section: 0)
+//        tableView.insertRows(at: [newIndexPath], with: .automatic)
     }
 }

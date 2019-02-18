@@ -74,6 +74,8 @@ struct CoreDataManager {
         
         employee.name = employeeProperties.name
         employee.company = employeeProperties.company
+        employee.type = employeeProperties.employeeType
+        
         employeeDetails.birthday = employeeProperties.birthday
         employee.employeeDetails = employeeDetails
         
