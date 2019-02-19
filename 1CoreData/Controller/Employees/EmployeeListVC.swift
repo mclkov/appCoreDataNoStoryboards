@@ -46,8 +46,8 @@ class EmployeeListVC: UITableViewController {
     
     func setSections(employees: [Employee]) {
         employeeTypes.forEach { (employeeType) in
-            let filtratedEmployee = employees.filter { $0.type == employeeType.description}
-            self.allEmployees.append(filtratedEmployee)
+            let filtratedEmployees = employees.filter { $0.type == employeeType.description}
+            self.allEmployees.append(filtratedEmployees)
         }
     }
     
