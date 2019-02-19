@@ -8,16 +8,31 @@
 
 import Foundation
 
-enum EmployeeType: String {
+protocol EmployeeTypeDescription {
+    var description: String { get }
+}
+
+enum EmployeeType: Int, EmployeeTypeDescription {
     static var allCases: [EmployeeType] {
         return [.Executive, .SeniorManagement, .Staff]
     }
-    
+
     static var allCasesRaw: [String] {
-        return [EmployeeType.Executive.rawValue, EmployeeType.SeniorManagement.rawValue, EmployeeType.Staff.rawValue]
+        return [EmployeeType.Executive.description, EmployeeType.SeniorManagement.description, EmployeeType.Staff.description]
     }
     
     case Executive
-    case SeniorManagement = "Senior Management"
+    case SeniorManagement
     case Staff
+    
+    var description: String {
+        switch self {
+        case .Executive:
+            return "Executive"
+        case .SeniorManagement:
+            return "Senior Management"
+        case .Staff:
+            return "Staff"
+        }
+    }
 }

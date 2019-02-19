@@ -62,12 +62,8 @@ extension EmployeeListVC {
     
     func addExtraCellToBeginningOfSection(_ section: Int) -> UIView {
         var headerText = ""
-        if section == 0 {
-            headerText = "Executive"
-        } else if section == 1 {
-            headerText = "Senior management"
-        } else {
-            headerText = "Staff"
+        if let section = EmployeeType(rawValue: section)?.description {
+            headerText = section
         }
         
         return self.getHeaderSectionLabel(text: headerText)
