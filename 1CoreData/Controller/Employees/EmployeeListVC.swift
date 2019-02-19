@@ -10,15 +10,10 @@ import UIKit
 import CoreData
 
 class EmployeeListVC: UITableViewController {
-    var employees = [Employee]()
     var company: Company?
     
     var allEmployees = [[Employee]]()
-    var employeeTypes = [
-        EmployeeType.Executive.description,
-        EmployeeType.SeniorManagement.description,
-        EmployeeType.Staff.description
-    ]
+    var employeeTypes = EmployeeType.allCasesDescription
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,10 +40,15 @@ class EmployeeListVC: UITableViewController {
     }
     
     func setSections(employees: [Employee]) {
+        self.resetEmployeesArray()
         employeeTypes.forEach { (employeeType) in
             let filtratedEmployees = employees.filter { $0.type == employeeType.description}
             self.allEmployees.append(filtratedEmployees)
         }
+    }
+    
+    func resetEmployeesArray() {
+        self.allEmployees = []
     }
     
     func amountOfRowsForTableView(section: Int) -> Int {

@@ -14,7 +14,7 @@ protocol EmployeeTypeDescription {
 
 enum EmployeeType: Int, EmployeeTypeDescription {
     static var allCases: [EmployeeType] {
-        return [.Executive, .SeniorManagement, .Staff]
+        return [.Executive, .SeniorManagement, .Staff, .Intern]
     }
 
     static var allCasesDescription: [String] {
@@ -29,6 +29,7 @@ enum EmployeeType: Int, EmployeeTypeDescription {
     case Executive
     case SeniorManagement
     case Staff
+    case Intern
     
     var description: String {
         switch self {
@@ -38,6 +39,8 @@ enum EmployeeType: Int, EmployeeTypeDescription {
             return "Senior Management"
         case .Staff:
             return "Staff"
+        case .Intern:
+            return "Intern"
         }
     }
 }
