@@ -16,6 +16,8 @@ extension EmployeeListVC: EmployeeDataDelegate{
     func didAddEmployee(employee: Employee) {
         self.fetchEmployees()
         self.tableView.reloadData()
+        
+        //        TODO: add with animation using sections
 //        self.employees.append(employee)
 //        let nextIndexValue = employees.count - 1
 //        let newIndexPath = IndexPath(row: nextIndexValue, section: 0)

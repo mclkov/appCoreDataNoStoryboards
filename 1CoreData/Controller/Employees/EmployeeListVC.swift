@@ -14,8 +14,6 @@ class EmployeeListVC: UITableViewController {
     var company: Company?
     
     var allEmployees = [[Employee]]()
-    var shortNameEmployees = [Employee]()
-    var longNameEmployees = [Employee]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,35 +41,28 @@ class EmployeeListVC: UITableViewController {
     
     func setSections(employees: [Employee]) {
         self.allEmployees = [
-            self.getShortNameEmployees(employees: employees),
-            self.getLongNameEmployees(employees: employees)
+            self.getExecutiveEmployees(employees: employees),
+            self.getSeniorManagementEmployees(employees: employees),
+            self.getStaffEmployees(employees: employees)
         ]
     }
     
-    func getShortNameEmployees(employees: [Employee]) -> [Employee] {
+    func getExecutiveEmployees(employees: [Employee]) -> [Employee] {
         return employees.filter({ (employee) -> Bool in
-            if let count = employee.name?.count {
-                return self.conditionForShortNames(length: count)
-            }
-            return false
+            return employee.type == "Executive"
         })
     }
     
-    func conditionForShortNames(length: Int) -> Bool {
-        return length <= 6
-    }
-    
-    func getLongNameEmployees(employees: [Employee]) -> [Employee] {
+    func getSeniorManagementEmployees(employees: [Employee]) -> [Employee] {
         return employees.filter({ (employee) -> Bool in
-            if let count = employee.name?.count {
-                return self.conditionForLongNames(length: count)
-            }
-            return false
+            return employee.type == "Senior Management"
         })
     }
     
-    func conditionForLongNames(length: Int) -> Bool {
-        return length > 6
+    func getStaffEmployees(employees: [Employee]) -> [Employee] {
+        return employees.filter({ (employee) -> Bool in
+            return employee.type == "Staff"
+        })
     }
     
     func amountOfRowsForTableView(section: Int) -> Int {
