@@ -48,21 +48,15 @@ class EmployeeListVC: UITableViewController {
     }
     
     func getExecutiveEmployees(employees: [Employee]) -> [Employee] {
-        return employees.filter({ (employee) -> Bool in
-            return employee.type == "Executive"
-        })
+        return employees.filter { $0.type == "Staff" }
     }
     
     func getSeniorManagementEmployees(employees: [Employee]) -> [Employee] {
-        return employees.filter({ (employee) -> Bool in
-            return employee.type == "Senior Management"
-        })
+        return employees.filter { $0.type == "Senior Management" }
     }
     
     func getStaffEmployees(employees: [Employee]) -> [Employee] {
-        return employees.filter({ (employee) -> Bool in
-            return employee.type == "Staff"
-        })
+        return employees.filter { $0.type == "Staff" }
     }
     
     func amountOfRowsForTableView(section: Int) -> Int {
