@@ -17,7 +17,7 @@ enum EmployeeType: Int, EmployeeTypeDescription {
         return [.Executive, .SeniorManagement, .Staff]
     }
 
-    static var allCasesRaw: [String] {
+    static var allCasesDescription: [String] {
         return [EmployeeType.Executive.description, EmployeeType.SeniorManagement.description, EmployeeType.Staff.description]
     }
     

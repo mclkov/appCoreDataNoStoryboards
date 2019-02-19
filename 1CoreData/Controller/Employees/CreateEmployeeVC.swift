@@ -48,7 +48,7 @@ class CreateEmployeeVC: UIViewController {
     }()
     
     let employeeTypeSegmentedControl: UISegmentedControl = {
-        let types = EmployeeType.allCasesRaw
+        let types = EmployeeType.allCasesDescription
         let control = UISegmentedControl(items: types)
         control.selectedSegmentIndex = 0
         control.tintColor = ColorScheme.darkBlue
