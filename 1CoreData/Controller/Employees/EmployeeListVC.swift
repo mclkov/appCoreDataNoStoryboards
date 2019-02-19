@@ -14,6 +14,11 @@ class EmployeeListVC: UITableViewController {
     var company: Company?
     
     var allEmployees = [[Employee]]()
+    var employeeTypes = [
+        EmployeeType.Executive.description,
+        EmployeeType.SeniorManagement.description,
+        EmployeeType.Staff.description
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,23 +45,10 @@ class EmployeeListVC: UITableViewController {
     }
     
     func setSections(employees: [Employee]) {
-        self.allEmployees = [
-            self.getExecutiveEmployees(employees: employees),
-            self.getSeniorManagementEmployees(employees: employees),
-            self.getStaffEmployees(employees: employees)
-        ]
-    }
-    
-    func getExecutiveEmployees(employees: [Employee]) -> [Employee] {
-        return employees.filter { $0.type == EmployeeType.Executive.description }
-    }
-    
-    func getSeniorManagementEmployees(employees: [Employee]) -> [Employee] {
-        return employees.filter { $0.type == EmployeeType.SeniorManagement.description }
-    }
-    
-    func getStaffEmployees(employees: [Employee]) -> [Employee] {
-        return employees.filter { $0.type == EmployeeType.Staff.description }
+        employeeTypes.forEach { (employeeType) in
+            let filtratedEmployee = employees.filter { $0.type == employeeType.description}
+            self.allEmployees.append(filtratedEmployee)
+        }
     }
     
     func amountOfRowsForTableView(section: Int) -> Int {
