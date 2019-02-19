@@ -18,7 +18,12 @@ enum EmployeeType: Int, EmployeeTypeDescription {
     }
 
     static var allCasesDescription: [String] {
-        return [EmployeeType.Executive.description, EmployeeType.SeniorManagement.description, EmployeeType.Staff.description]
+        var cases = [String]()
+        allCases.forEach { (employeeType) in
+            cases.append(employeeType.description)
+        }
+        
+        return cases
     }
     
     case Executive
